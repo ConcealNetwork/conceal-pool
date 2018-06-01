@@ -1,0 +1,2 @@
+# concealxpool
+Mining Pool Node
