@@ -107,6 +107,8 @@ currentPage = {
 
 // Chart
 var displayedChart = false;
+var poolBlocksChart = null;
+
 function generateChart(data) {
     if (displayedChart || !data || data === "undefined") return;
     difficultyData = data.difficulty;
@@ -147,7 +149,11 @@ function generateChart(data) {
     if (bordercolor === null) bordercolor = '#FFA500';
     if (borderwidth === null || isNaN(borderwidth)) borderwidth = 1;
 
-    var chart = new Chart(document.getElementById('blocksChartObj'), {
+    if (poolBlocksChart) {
+        poolBlocksChart.destroy();
+    }
+
+    poolBlocksChart = new Chart(document.getElementById('blocksChartObj'), {
         type: 'bar',
         data: {
             labels: labels,

@@ -251,6 +251,9 @@
 // Charts initialized
 var chartsInitialized = false;
 var intervalChartsUpdate;
+var poolHashrateChart = null;
+var marketPriceChart = null;
+var diffChart = null;
 
 // get conceal market data
 $.getJSON( "https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", function( data ) {
@@ -260,7 +263,11 @@ $.getJSON( "https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", func
     $("#marketcap").html(data.market_data.market_cap.usd.toFixed(0) + " $ (" + data.market_cap_rank + ")");
     $("#dailyVolume").html(data.market_data.total_volume.usd.toFixed(0) + " $");
 
-    var chartObj = new Chart(document.getElementById('chartMarketPriceCanvas'), {
+    if (marketPriceChart) {
+        marketPriceChart.destroy(); 
+    }
+    
+    marketPriceChart = new Chart(document.getElementById('chartMarketPriceCanvas'), {
         type: 'line',
         data: {
             labels: data.market_data.sparkline_7d.price,
@@ -389,7 +396,11 @@ function createCharts() {
         workers: getGraphData(data.workers)
     };
 
-    var poolHashrateChart = new Chart(document.getElementById('chartPoolHashrateCanvas'), {
+    if (poolHashrateChart) {
+        poolHashrateChart.destroy();
+    }
+
+    poolHashrateChart = new Chart(document.getElementById('chartPoolHashrateCanvas'), {
         type: 'line',
         data: {
             labels: graphData.miners.names,
@@ -422,7 +433,11 @@ function createCharts() {
         }
     });
 
-    var diffChart = new Chart(document.getElementById('chartCurrDiffCanvas'), {
+    if (diffChart) {
+        diffChart.destroy();
+    }
+
+    diffChart = new Chart(document.getElementById('chartCurrDiffCanvas'), {
         type: 'line',
         data: {
             labels: graphData.miners.names,
