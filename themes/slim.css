@@ -40524,6 +40524,7 @@ html {
 
 .slim-logo span {
   color: #868ba1;
+  font-weight: 400;  
 }
 
 .slim-logo a {
@@ -40546,7 +40547,7 @@ html {
 }
 
 a, .tx-primary {
-  color: #FFA500;
+  color: #aaa;
 }
 
 .slim-pagetitle {

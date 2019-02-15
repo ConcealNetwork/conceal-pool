@@ -10,7 +10,9 @@ body {
   color: #1b84e7; }
 
 .slim-logo span {
-  color: #868ba1; }
+  color: #868ba1; 
+  font-weight: 400;
+}
 
 .search-box .btn {
   background-color: #1b84e7;
