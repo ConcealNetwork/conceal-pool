@@ -63,7 +63,7 @@
         </div>
 
         <!-- Workers -->
-        <div class="yourStats yourWorkers card mg-t-20">
+        <div class="yourStats yourWorkers card mg-t-20" id="workersStats">
             <div class="card-header tx-medium bd-0 tx-white bg-primary-dark" tkey="Workers"><i class="fa fa-server"></i>&nbsp; <span tkey="workerStats">Workers Statistics</span></div>
             <div class="card-body">
                 <div id="workersReport" class="table-responsive">
@@ -319,8 +319,8 @@ function createCharts() {
     var data = userChartsData;
 
     var graphData = {
-        hashrate: getGraphData(data.hashrate),
-        payments: getGraphData(data.payments)
+        hashrate: getGraphData(data.hashrate, false),
+        payments: getGraphData(data.payments, true)
     };
 
     for (var graphType in graphData) {
@@ -402,7 +402,11 @@ function getGraphData(rawData, fixValueToCoins) {
     if(rawData) {
         for (var i = 0, xy; xy = rawData[i]; i++) {
             graphData.names.push(new Date(xy[0]*1000).toLocaleString());
-            graphData.values.push(xy[1]);
+            if (fixValueToCoins) {
+                graphData.values.push(getReadableCoins(xy[1], 2, true));
+            } else {
+                graphData.values.push(xy[1]);
+            }
         }
     }
     

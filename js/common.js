@@ -86,6 +86,12 @@ function routePage(loadedCallback) {
             $('#menu-content').collapse('hide');
             $('#loading').hide();
             $('#page').show().html(data);
+
+            if (currentPage) {
+                if (currentPage.init) {
+                    currentPage.init();
+                }
+            }            
 	    loadTranslations();
             if (currentPage) currentPage.update();
             if (loadedCallback) loadedCallback();

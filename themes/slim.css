@@ -40499,6 +40499,11 @@ body {
   border: 2px solid #388a2b !important;
 }
 
+.btn-danger-outline {
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #dc3545 !important;
+}
 
 .btn-success {
   border: 1px solid #388a2b !important;
@@ -40602,4 +40607,12 @@ a, .tx-primary {
 
 #chartMarketPrice {
   height: 200px;
+}
+
+#workersStats .status-ok {
+  color: #17a600;
+}
+
+#workersStats .status-error {
+  color: #a60000;
 }

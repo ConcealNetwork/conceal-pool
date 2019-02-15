@@ -27,6 +27,12 @@
                     <input class="form-control" id="yourIP" type="text" tkey="enterYourMinerIP" placeholder="An IP address your miners use (any)">
                 </div>
             </div>
+            <div class="row push-down-5">
+                <label class="col-lg-2 col-sm-3 col-form-label col-form-label-lg" for="yourIP"><span tkey="myIP">My IP address</span>:</label>
+                <div class="col-md-4 col-sm-5">
+                    <label class="col-form-label col-form-label-lg" id="myIP"></label>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -61,10 +67,10 @@
                         <input class="form-control" id="yourEmail" type="text" tplaceholder="enterYourEmail" placeholder="Enter Your E-Mail Address (optional)">
                     </div>
                     <div class="col-sm-4 push-down-5">
-                        <button class="btn btn-success" type="button" id="enableButton">
+                        <button class="btn btn btn-success-outline" type="button" id="enableButton">
                             <span><i class="fa fa-check"></i>&nbsp; <span tkey="enable">Enable</span></span>
                         </button>
-                        <button class="btn btn-danger" type="button" id="disableButton">
+                        <button class="btn btn-danger-outline" type="button" id="disableButton">
                             <span><i class="fa fa-ban"></i>&nbsp; <span tkey="disable">Disable</span></span>
                         </button>
                     </div>
@@ -72,14 +78,34 @@
             </div>
         </div>
     </div>
+
+    <!-- Telegram notifications -->
+    <div id="telegramNotifications">
+        <div class="card padding-15 padding-b-10 mg-t-20">
+            <div class="card-header tx-medium bd-0 tx-white bg-primary-dark"><span>Telegram notifications</span></div>
+            <div class="card-body">
+                <div class="stats">
+                    <div>Bot name: <a target="_blank" href="http://telegram.me/ImaginaryStreamBot">@ImaginaryStreamBot</a></div>
+                    <div>The pool's Telegram bot will report via Telegram when a worker connects or disconnects, and when payments have been made to your wallet.</div>
+                    <div>Bot commands: <br><br>/help - ask the box what it can do<br>/stats - Pool statistics<br>/enable <i>address</i> - Notifications ON<br>/disable <i>address</i> - Notifications OFF</div>
+                </div>
+            </div>
+        </div>
+    </div>    
 </div>
 
 <script>
 // Update current page
 currentPage = {
     destroy: function(){},
+    init: function() {
+        $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
+            $("#myIP").html(data.ip.toString());
+        });    
+    },
     update: function(){
-	if (!lastStats.config.sendEmails) $('#emailNotifications').hide();
+	  if (!lastStats.config.sendEmails) $('#emailNotifications').hide();
+	  if (!lastStats.config.telegramBotName) $('#telegramNotifications').hide();
     }
 };
 
