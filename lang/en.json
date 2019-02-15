@@ -2,7 +2,7 @@
     "miningPool": "Mining Pool",
     "dashboard": "Dashboard",
     "gettingStarted": "Getting Started",
-    "yourStats": "Worker Statistics",
+    "yourStats": "Worker Stats",
     "poolBlocks": "Pool Blocks",
 	"resources": "Resources",
     "settings": "Settings",
@@ -38,7 +38,7 @@
     "currentHashRate": "Current Hash Rate",
     "lastShare": "Last Share Submitted",
     "totalHashes": "Total Hashes Submitted",
-    "top10miners": "Top 10 miners",
+    "top10miners": "Top 10",
 
     "blocksTotal": "Blocks Found",
     "blockSolvedTime": "Blocks Found Every",
