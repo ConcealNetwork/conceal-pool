@@ -1,7 +1,0 @@
-/path/to/pool/logs/*.log {
-    daily
-    rotate 7
-    missingok
-    compress
-    create
-}
