@@ -240,6 +240,20 @@
                         </div>
                     </div>
                 </span>
+                <div id="addHashrateWrapper" class="mg-t-20">
+                    <label id="addHashrateLabel">Add your hashrate to the network</label>
+                    <div class="toggle-wrapper">
+                        <div class="toggle toggle-modern" id="hashrateToggle" style="height: 26px; width: 60px;">
+                            <div class="toggle-slide">
+                                <div class="toggle-inner" style="width: 94px; margin-left: 0px;">
+                                    <div class="toggle-on active" style="height: 26px; width: 47px; text-indent: -8.66667px; line-height: 26px;">ON</div>
+                                    <div class="toggle-blob" style="height: 26px; width: 26px; margin-left: -13px;"></div>
+                                    <div class="toggle-off" style="height: 26px; width: 47px; margin-left: -13px; text-indent: 8.66667px; line-height: 26px;">OFF</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
             </div>
         </div>
     </div>
@@ -255,6 +269,12 @@ var poolHashrateChart = null;
 var marketPriceChart = null;
 var diffChart = null;
 
+$('.toggle').toggles({
+    on: true,
+    width: 65,
+    height: 30
+});
+
 // get conceal market data
 $.getJSON( "https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", function( data ) {
     USDperCCX = data.market_data.current_price.usd;
@@ -266,7 +286,7 @@ $.getJSON( "https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", func
     if (marketPriceChart) {
         marketPriceChart.destroy(); 
     }
-    
+
     marketPriceChart = new Chart(document.getElementById('chartMarketPriceCanvas'), {
         type: 'line',
         data: {
@@ -528,12 +548,22 @@ $('#calcHashUnits > li > a').click(function(e){
     calcEstimateProfit();
 });
 
+$('#hashrateToggle').on('toggle', function(e, active) {
+    calcEstimateProfit();
+});
+
 // Calculate current estimation
 function calcEstimateProfit(){
-    try {
+    try 
+    {
+        var addHashrateToNetwork = $('#hashrateToggle').data('toggles').active;
         var rateUnit = Math.pow(1000,parseInt($('#calcHashUnit').data('mul')));
         var hashRate = parseFloat($('#calcHashRate').val()) * rateUnit;
-        var profit = (hashRate * 86400 / lastStats.network.difficulty) * lastStats.lastblock.reward;
+        var networkHash = lastStats.network.difficulty / lastStats.config.coinDifficultyTarget;
+        if (addHashrateToNetwork) {
+            networkHash = networkHash + hashRate;   
+        }
+        var profit = lastStats.lastblock.reward * (1440 / 2) * (hashRate / networkHash);
         if (profit) {
             updateText('calcHashAmount1', getReadableCoins(profit, 2));
             updateText('calcHashAmount2', getCurrencyPriceText(profit));

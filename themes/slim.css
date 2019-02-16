@@ -40616,3 +40616,14 @@ a, .tx-primary {
 #workersStats .status-error {
   color: #a60000;
 }
+
+#addHashrateWrapper {
+  height: 30px;
+  display: inline-flex;
+}
+
+#addHashrateLabel {
+  margin: 0px !important;
+  line-height: 30px;
+  margin-right: 10px !important;
+}
