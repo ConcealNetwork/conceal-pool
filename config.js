@@ -7,7 +7,7 @@ var discord = "https://discordapp.com/invite/YourPool";
 var marketCurrencies = ["{symbol}-BTC", "{symbol}-USD", "{symbol}-EUR", "{symbol}-CAD"];
 
 var blockchainExplorer = "https://explorer.conceal.network/index.html?hash={id}#blockchain_block";
-var transactionExplorer = "https://explorer.conceal.network/index.html?hash={id}##blockchain_transaction";
+var transactionExplorer = "https://explorer.conceal.network/index.html?hash={id}#blockchain_transaction";
 
 var themeCss = "themes/default.css";
 var defaultLang = 'en';
