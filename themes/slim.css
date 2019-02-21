@@ -40627,3 +40627,9 @@ a, .tx-primary {
   line-height: 30px;
   margin-right: 10px !important;
 }
+
+@media only screen and (max-width: 500px) {
+  #btnWorkerStats {
+    display: none !important;
+  }
+}
