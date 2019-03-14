@@ -293,7 +293,7 @@ $.getJSON( "https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", func
             labels: data.market_data.sparkline_7d.price,
             datasets: [{
                 data: data.market_data.sparkline_7d.price,
-                backgroundColor: 'rgb(255,165,0,0.2)', 
+                backgroundColor: 'rgba(255,165,0,0.2)', 
                 fill: true,
                 borderWidth: 0,
                 pointRadius: 1,
@@ -426,7 +426,7 @@ function createCharts() {
             labels: graphData.hashrate.names,
             datasets: [{
                 data: graphData.hashrate.values,
-                backgroundColor: 'rgb(255,165,0,0.2)', 
+                backgroundColor: 'rgba(255,165,0,0.2)', 
                 fill: true,
                 borderWidth: 0,
                 borderColor: '#FFA500'
@@ -463,7 +463,7 @@ function createCharts() {
             labels: graphData.diff.names,
             datasets: [{
                 data: graphData.diff.values,
-                backgroundColor: 'rgb(255,165,0,0.2)', 
+                backgroundColor: 'rgba(255,165,0,0.2)', 
                 fill: true,
                 borderWidth: 0,
                 borderColor: '#FFA500'
