@@ -423,9 +423,9 @@ function createCharts() {
     poolHashrateChart = new Chart(document.getElementById('chartPoolHashrateCanvas'), {
         type: 'line',
         data: {
-            labels: graphData.miners.names,
+            labels: graphData.hashrate.names,
             datasets: [{
-                data: graphData.diff.values,
+                data: graphData.hashrate.values,
                 backgroundColor: 'rgb(255,165,0,0.2)', 
                 fill: true,
                 borderWidth: 0,
@@ -460,7 +460,7 @@ function createCharts() {
     diffChart = new Chart(document.getElementById('chartCurrDiffCanvas'), {
         type: 'line',
         data: {
-            labels: graphData.miners.names,
+            labels: graphData.diff.names,
             datasets: [{
                 data: graphData.diff.values,
                 backgroundColor: 'rgb(255,165,0,0.2)', 
