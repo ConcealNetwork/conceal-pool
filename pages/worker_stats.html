@@ -659,12 +659,14 @@ function renderPayments(paymentsResults){
 // Load more payments button
 var xhrGetPayments;
 $('#loadMorePayments').click(function(){
+    var address = getCurrentAddress();
+
     if (xhrGetPayments) xhrGetPayments.abort();
     xhrGetPayments = $.ajax({
         url: api + '/get_payments',
         data: {
             time: $('#paymentsReport_rows').children().last().data('time'),
-            address: getCurrentAddress()
+            address: address
         },
         dataType: 'json',
         cache: 'false',
