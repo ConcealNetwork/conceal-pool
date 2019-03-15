@@ -664,7 +664,7 @@ $('#loadMorePayments').click(function(){
         url: api + '/get_payments',
         data: {
             time: $('#paymentsReport_rows').children().last().data('time'),
-            address: address
+            address: getCurrentAddress()
         },
         dataType: 'json',
         cache: 'false',
