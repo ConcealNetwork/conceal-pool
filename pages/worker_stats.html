@@ -610,17 +610,25 @@ function renderPayments(paymentsResults){
         var existingRow = document.getElementById('paymentRow' + payment.time);
         if (existingRow && existingRow.getAttribute('data-json') !== paymentJson){
             $(existingRow).replaceWith(getPaymentRowElement(payment, paymentJson));
-        }
-        else if (!existingRow){
+        } else if (!existingRow){
             var inserted = false;
             var rows = $paymentsRows.children().get();
             for (var f = 0; f < rows.length; f++) {
                 var pTime = parseInt(rows[f].getAttribute('data-time'));
+                var pDate = rows[f].getAttribute('data-date'); // Value of Date from already displayed payment HEADER.
+
                 if (pTime && pTime < payment.time){
                     inserted = true;
                     $(rows[f]).before(paymentElement);
                     break;
-                }
+                } else if (!pTime && pDate) { // pTime does not exist but pDate does, so this is an existing Header.
+          		   var sDT = new Date(parseInt(summaryData.time) * 1000).toLocaleDateString();
+		           if (new Date(sDT) > new Date(pDate)) { 
+        		      inserted = true;
+        		      $(rows[f]).before(paymentElement);
+        		      break;					
+		            }
+		        }
             }
             if (!inserted) {
                 $paymentsRows.append(paymentElement);
@@ -636,17 +644,24 @@ function renderPayments(paymentsResults){
         var existingSummary = document.getElementById('summaryRow' + summaryData.date);
         if (existingSummary && existingSummary.getAttribute('data-json') !== summaryJson){
             $(existingSummary).replaceWith(summaryElement);
-        }
-        else if (!existingSummary){
+        } else if (!existingSummary){
             var inserted = false;
             var rows = $paymentsRows.children().get();
             for (var f = 0; f < rows.length; f++) {
-                var pTime = parseInt(rows[f].getAttribute('data-time'));
+                var pTime = parseInt(rows[f].getAttribute('data-time')); // Value of Time from already displayed payment row.
+        		var pDate = rows[f].getAttribute('data-date'); // Value of Date from already displayed payment HEADER.
                 if (pTime && pTime === summaryData.time){
                     inserted = true;
                     $(rows[f]).before(summaryElement);
                     break;
-                }
+                } else if (!pTime && pDate) { // pTime does not exist but pDate does, so this is an existing Header.
+        		    var sDT = new Date(parseInt(summaryData.time) * 1000).toLocaleDateString();
+		            if (new Date(sDT) > new Date(pDate)) { 
+		                inserted = true;
+		                $(rows[f]).before(summaryElement);
+		                break;					
+		            }
+		        }
             }
             if (!inserted) {
                 $paymentsRows.append(summaryElement);
