@@ -40628,6 +40628,10 @@ a, .tx-primary {
   margin-right: 10px !important;
 }
 
+#marketcapRank {
+  margin-left: 5px;
+}
+
 @media only screen and (max-width: 500px) {
   #btnWorkerStats {
     display: none !important;

@@ -215,9 +215,9 @@ function fetchAddressStats(longpoll){
                 var paid24hUSD = getReadableCoins(last24hCoins, 2, true) * data.market_data.current_price.usd;
                 var paid7dUSD = getReadableCoins(last7dCoins, 2, true) * data.market_data.current_price.usd;
 
-                updateText('paidTotal', getReadableCoins(totalCoins) + " - " + paidTotalUSD.toFixed(2) + " $");
-                updateText('paid24h', getReadableCoins(last24hCoins) + " - " + paid24hUSD.toFixed(2) + " $");
-                updateText('paid7d', getReadableCoins(last7dCoins) + " - " + paid7dUSD.toFixed(2) + " $");
+                updateText('paidTotal', getReadableCoins(totalCoins) + " - $ " + paidTotalUSD.toFixed(2));
+                updateText('paid24h', getReadableCoins(last24hCoins) + " - $ " + paid24hUSD.toFixed(2));
+                updateText('paid7d', getReadableCoins(last7dCoins) + " - $ " + paid7dUSD.toFixed(2));
             });
 
             updateText('yourHashes', (data.stats.hashes || 0).toString());
