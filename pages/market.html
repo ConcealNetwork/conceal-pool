@@ -213,7 +213,6 @@ $.getJSON( "https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", func
                 yAxes: [{
                     ticks: {
                         maxTicksLimit: 5,
-                        beginAtZero:true,
                         fontSize: 10,
                         callback: function(value, index, values) {
                             return value.toFixed(2) + '$';
