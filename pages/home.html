@@ -377,10 +377,18 @@
         marketPriceChart.destroy();
       }
 
+      var timeLabels = [];
+			var dataLength = data.market_data.sparkline_7d.price.length;
+			var durationAsMS = moment.duration(7 / dataLength, 'd').asMilliseconds();
+
+			for (i = dataLength - 1; i >= 0; i--) {
+ 				timeLabels.push(moment().subtract(durationAsMS * (i + 1), 'ms').format('YYYY-MM-DD'));
+			}
+
       marketPriceChart = new Chart(document.getElementById('chartMarketPriceCanvas'), {
         type: 'line',
         data: {
-          labels: data.market_data.sparkline_7d.price,
+          labels: timeLabels,
           datasets: [
             {
               data: data.market_data.sparkline_7d.price,
@@ -418,12 +426,31 @@
                 }
               }
             ],
-            xAxes: [
-              {
-                display: false
-              }
-            ]
-          }
+            xAxes: [{
+								ticks: {
+          				autoSkip: true,
+          				maxTicksLimit: 7,
+          				maxRotation: 0,
+          				minRotation: 0
+        				},
+        				gridLines: {
+          				color: 'rgba(255, 255, 255, .08)'
+								},							
+						}]
+          },
+          hover: {
+     				mode: 'nearest',
+     				intersect: true
+   				},
+   				tooltips: {
+     				mode: 'index',
+     				intersect: false,
+						callbacks: {
+       			  label: function(tooltipItem) {
+             	  return "$ " + Number(tooltipItem.yLabel).toFixed(4);
+           		}			
+       			}						
+					}
         }
       });
     });
