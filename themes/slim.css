@@ -40632,6 +40632,10 @@ a, .tx-primary {
   margin-left: 5px;
 }
 
+.slim-navbar .sub-item ul a:hover {
+  color: #FFA500 !important;
+}
+
 @media only screen and (max-width: 500px) {
   #btnWorkerStats {
     display: none !important;
