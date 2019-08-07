@@ -623,7 +623,7 @@ function renderPayments(paymentsResults){
                     break;
                 } else if (!pTime && pDate) { // pTime does not exist but pDate does, so this is an existing Header.
           		   var sDT = new Date(parseInt(summaryData.time) * 1000).toLocaleDateString();
-		           if (new Date(sDT) > new Date(pDate)) { 
+		           if (new Date(sDT) > new Date(pDate).toLocaleDateString()) { 
         		      inserted = true;
         		      $(rows[f]).before(paymentElement);
         		      break;					
@@ -656,7 +656,7 @@ function renderPayments(paymentsResults){
                     break;
                 } else if (!pTime && pDate) { // pTime does not exist but pDate does, so this is an existing Header.
         		    var sDT = new Date(parseInt(summaryData.time) * 1000).toLocaleDateString();
-		            if (new Date(sDT) > new Date(pDate)) { 
+		            if (new Date(sDT) > new Date(pDate).toLocaleDateString()) { 
 		                inserted = true;
 		                $(rows[f]).before(summaryElement);
 		                break;					
