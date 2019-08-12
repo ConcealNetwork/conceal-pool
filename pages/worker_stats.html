@@ -403,7 +403,7 @@ function createCharts() {
             }
             if (bgcolor === null) bgcolor = 'rgba(3, 169, 244, .4)';
             if (bordercolor === null) bordercolor = '#03a9f4';
-            if (borderwidth === null || isNaN(borderwidth)) borderwidth = 1;
+            if (borderwidth === null || isNaN(borderwidth)) borderwidth = 0;
 
 
             var chartObj = new Chart(document.getElementById('chart_' + graphType), {
@@ -430,6 +430,7 @@ function createCharts() {
                     },
                     scales: {
                         yAxes: [{
+                            display: false,
                             ticks: {
                                 maxTicksLimit: 5,
                                 beginAtZero:true,
