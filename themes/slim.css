@@ -161,7 +161,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Lato", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5;
@@ -3938,7 +3938,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4023,7 +4023,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -7575,7 +7575,7 @@ p {
     color: #343a40; }
   .dropdown-menu-header div {
     font-size: 12px;
-    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; }
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif; }
     .dropdown-menu-header div a:nth-child(2) {
       margin-left: 5px;
       padding-left: 8px;
@@ -9724,11 +9724,11 @@ table.dataTable {
 /* ############### IonRangeSlider ############### */
 /* ---------------------------------------------- */
 .irs-min, .irs-max {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   border-radius: 0; }
 
 .irs-from, .irs-to, .irs-single {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   background-color: #5B93D3;
   border-radius: 0; }
 
@@ -10408,7 +10408,7 @@ table.dataTable {
 
 /* Setup basic CSS for Label */
 .jqvmap-pin {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   cursor: default;
   pointer-events: none; }
 
@@ -10634,7 +10634,7 @@ table.dataTable {
 
 .fc-datepicker-color .ui-datepicker-calendar th {
   color: rgba(255, 255, 255, 0.5);
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif; }
 
 .fc-datepicker-color .ui-datepicker-calendar td {
   background-color: transparent;
@@ -11230,7 +11230,7 @@ textarea.parsley-success:focus {
     padding: 8px 15px;
     background-image: none;
     background-color: #ced4da;
-    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
     text-shadow: none;
     text-transform: capitalize;
@@ -11242,7 +11242,7 @@ textarea.parsley-success:focus {
       text-shadow: none; }
 
 .sp-button-container .sp-cancel {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   font-size: 12px;
   text-transform: capitalize;
   color: #6c757d !important; }
@@ -11339,7 +11339,7 @@ textarea.parsley-success:focus {
       .card-header.note-toolbar > .btn-group .dropdown-item blockquote,
       .card-header.note-toolbar > .btn-group .dropdown-item pre {
         margin-bottom: 0;
-        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+        font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
         font-size: 13px; }
       .card-header.note-toolbar > .btn-group .dropdown-item h1, .card-header.note-toolbar > .btn-group .dropdown-item h2, .card-header.note-toolbar > .btn-group .dropdown-item h3, .card-header.note-toolbar > .btn-group .dropdown-item h4, .card-header.note-toolbar > .btn-group .dropdown-item h5, .card-header.note-toolbar > .btn-group .dropdown-item h6 {
         font-size: 13px;
@@ -11351,7 +11351,7 @@ textarea.parsley-success:focus {
     .card-header.note-toolbar > .btn-group .dropdown-fontname .dropdown-item {
       padding-left: 5px; }
       .card-header.note-toolbar > .btn-group .dropdown-fontname .dropdown-item span {
-        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif !important;
+        font-family: "Lato", "Helvetica Neue", Arial, sans-serif !important;
         font-size: 12px; }
 
 /* ----------------------------------------- */
@@ -11400,7 +11400,7 @@ textarea.parsley-success:focus {
 .toggle-slide .toggle-on,
 .toggle-slide .toggle-off {
   opacity: 0;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400; }
   .toggle-slide .toggle-on.active,
   .toggle-slide .toggle-off.active {
@@ -11612,7 +11612,7 @@ textarea.parsley-success:focus {
   letter-spacing: -2px;
   font-size: 32px;
   font-weight: 700;
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif; }
   .slim-logo a {
     color: #1b84e7; }
   @media (min-width: 992px) {
@@ -12104,7 +12104,7 @@ textarea.parsley-success:focus {
         margin-bottom: 15px;
         font-size: 11px;
         font-weight: 500;
-        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+        font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
         text-align: left;
         letter-spacing: 1px; }
   .slim-navbar .sub-item {
@@ -13051,7 +13051,7 @@ textarea.parsley-success:focus {
     border-left: 1px solid #ced4da; }
 
 .card-dash-chart-one .right-panel .slim-card-title {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 1px;
   font-size: 12px;
   margin-bottom: 25px; }
@@ -13181,7 +13181,7 @@ textarea.parsley-success:focus {
     margin-bottom: 25px; }
     .dashboard-chart-one .card-revenue h1 span {
       font-size: 14px;
-      font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
       font-weight: 400;
       margin-left: 10px;
       letter-spacing: normal; }
@@ -34165,7 +34165,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   font-weight: 100; }
 
 .tx-roboto {
-  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif; }
 
 .tx-opensans {
   font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif; }
