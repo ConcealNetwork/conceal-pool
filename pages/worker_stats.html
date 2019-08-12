@@ -392,7 +392,7 @@ function createCharts() {
                     labels: graphData[graphType].names,
                     datasets: [{
                         data: graphData[graphType].values,
-                        backgroundColor: 'rgb(255,165,0,0.2)', 
+                        backgroundColor: 'rgb(255,165,0,0.5)', 
                         fill: true,
                         borderWidth: 0,
                         borderColor: '#FFA500'
@@ -410,7 +410,6 @@ function createCharts() {
                     },
                     scales: {
                         yAxes: [{
-                            display: false,
                             ticks: {
                                 maxTicksLimit: 5,
                                 beginAtZero:true,
