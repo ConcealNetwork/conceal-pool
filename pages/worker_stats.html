@@ -11,7 +11,18 @@
 
         <div class="row">
             <div class="col-md-6 col-lg-6">
-
+                <div id="chartPoolHashrate" class="dash-chartist">
+                    <canvas id="chartPoolHashrateCanvas"></canvas>
+                    <a class="chart-style"></a>
+                  </div>
+                  <div class="dash-item-overlay">
+                    <h1>
+                      <span class="mediumText" id="poolHashrate">N/A</span>
+                      <span class="smallText">(<span id="hashPower">0%</span>)</h1>
+                      <p class="earning-label" tkey="poolHashrate">Pool Hashrate</p>
+                      <a data-page="worker_stats.html" href="#worker_stats" class="statement-link" id="btnWorkerStats">Worker Stats<i class="fa fa-angle-right mg-l-5"></i>
+                      </a>
+                  </div>
             </div><!-- col-4 -->
             <div class="col-md-6 col-lg-6 mg-t-20 mg-md-t-0-force">
               <ul class="list-group">
@@ -21,7 +32,14 @@
                     <span class="text-muted">eu.pool.conceal.network:3333</span><br />
                     <span class="text-muted">asia.pool.conceal.network:3333</span><br />                  
                 </p>
-                </li>             
+                <p class="mg-b-0"><strong class="tx-medium">Fees and Payouts</strong><br /> 
+                    <span class="text-muted">Fee: 1% </span><br />
+                    <span class="text-muted">Payouts: Every 30 seconds</span><br />
+                    <span class="text-muted">Threshold: 3 CCX</span><br />                  
+                </p>   
+                <p class="mg-b-0"><strong class="tx-medium">Algorithm</strong><br /> 
+                    <span class="text-muted">Cryptonight Conceal</span><br />              
+                </p>                               
               </ul>
             </div><!-- col-4 -->
           </div>   
