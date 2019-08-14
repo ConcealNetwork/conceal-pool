@@ -98,10 +98,8 @@
                     <th class="col4 sort avghr" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">HR (1h)</span> <i class="fa fa-sort"></i></th>
                     <th class="col5 sort avghr" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">HR (6h)</span> <i class="fa fa-sort"></i></th>
                     <th class="col6 sort avghr" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">HR (24h)</span> <i class="fa fa-sort"></i></th>
-                    <th class="col7 sort"><span tkey="validShares">Valid Shares</span> <i class="fa fa-sort"></i></th>
-                    <th class="col8 sort"><span tkey="invalidShares">Invalid Shares</span> <i class="fa fa-sort"></i></th>
-                    <th class="col9 sort"><span tkey="lastShare">Last Share</span> <i class="fa fa-sort"></i></th>
-                    <th class="col10 sort"><span tkey="totalHashes">Total Hashes</span> <i class="fa fa-sort"></i></th>
+                    <th class="col7 sort"><span tkey="lastShare">Last Share</span> <i class="fa fa-sort"></i></th>
+                    <th class="col8 sort"><span tkey="totalHashes">Total Hashes</span> <i class="fa fa-sort"></i></th>
                 </tr>
                 </thead>
                 <tbody id="workersReport_rows">
@@ -503,10 +501,8 @@ function getWorkerCells(worker){
            '<td class="col4 avghr" data-sort="' + hashrate1h + '">' + getReadableHashRateString(hashrate1h) + '/s</td>' +
            '<td class="col5 avghr" data-sort="' + hashrate6h + '">' + getReadableHashRateString(hashrate6h) + '/s</td>' +
            '<td class="col6 avghr" data-sort="' + hashrate24h + '">' + getReadableHashRateString(hashrate24h) + '/s</td>' +
-           '<td class="col7" data-sort="' + validShares + '">' + validShares + '</td>';
-           '<td class="col8" data-sort="' + invalidShares + '">' + invalidShares + '</td>';
-           '<td class="col9" data-sort="' + lastShare + '">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
-           '<td class="col10" data-sort="' + hashes + '">' + hashes + '</td>';
+           '<td class="col7" data-sort="' + lastShare + '">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
+           '<td class="col8" data-sort="' + hashes + '">' + validShares + '</td>';
 }
 
 // Handle sort on workers table
