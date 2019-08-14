@@ -104,9 +104,11 @@
                     <th class="col1"><span tkey="status">Status</span> </th>
                     <th class="col2"><span tkey="workerName">Name</span> </th>
                     <th class="col3"><span tkey="hashRate">Hash Rate</span></th>
-                    <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">HR (1h)</span></th>
-                    <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">HR (6h)</span> </th>
-                    <th class="col6r" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">HR (24h)</span> </th>
+                    <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate15m">15m</span></th>
+                    <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">1h</span></th>
+                    <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">6h</span> </th>
+                    <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate12h">12h</span> </th>
+                    <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
                     <th class="col7"><span tkey="lastShare">Last Share</span> </th>
                     <th class="col8"><span tkey="validShares">Valid Shares</span> </th>
                     <th class="col9"><span tkey="invalidShares">Invalid Shares</span> </th>
@@ -509,15 +511,17 @@ function getWorkerCells(worker){
     var hashes = (worker.hashes || 0).toString();
     var status = (hashrate <= 0) ? 'error' : 'ok';
 
-    return '<td class="col1"><i class="fa fa-' + (status == 'ok' ? 'check status-ok" style="color: green;"' : 'times status-error') + '"></i></td>' +
+    return '<td class="col1"><i class="fa fa-' + (status == 'ok' ? 'check status-ok" style="color: green;"' : 'times status-error" style="color: red;"') + '></i></td>' +
            '<td class="col2">' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + '</td>' +
            '<td class="col3">' + getReadableHashRateString(hashrate) + '/s</td>' +
+           '<td class="col4">' + getReadableHashRateString(hashrate15m) + '/s</td>' +
            '<td class="col4">' + getReadableHashRateString(hashrate1h) + '/s</td>' +
            '<td class="col5">' + getReadableHashRateString(hashrate6h) + '/s</td>' +
+           '<td class="col6">' + getReadableHashRateString(hashrate12h) + '/s</td>' +
            '<td class="col6">' + getReadableHashRateString(hashrate24h) + '/s</td>' +
            '<td class="col7">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
            '<td class="col8">' + validShares + '</td>' +
-           '<td class="col9">' + invalidShares + '</td>' +
+           '<td class="col9" style="color: red;">' + invalidShares + '</td>' +
            '<td class="col10">' + hashes + '</td>';
 }
 
