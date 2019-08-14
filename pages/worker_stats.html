@@ -518,9 +518,7 @@ function getWorkerCells(worker){
            '<td class="col7" data-sort="' + lastShare + '">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
            '<td class="col8" data-sort="' + validShares + '">' + validShares + '</td>' +
            '<td class="col9" data-sort="' + invalidShares + '">' + invalidShares + '</td>' +
-           '<td class="col10" data-sort="' + hashes + '">' + hashes + '</td>' +
-           '</tr><tr><td colspan="5">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
-           '<td colspan="5">' + hashes + '</td></tr>';
+           '<td class="col10" data-sort="' + hashes + '">' + hashes + '</td>';
 }
 
 // Handle sort on workers table
