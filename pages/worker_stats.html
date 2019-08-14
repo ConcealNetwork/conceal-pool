@@ -104,10 +104,10 @@
                     <th class="col1"><span tkey="status">Status</span> </th>
                     <th class="col2"><span tkey="workerName">Name</span> </th>
                     <th class="col3"><span tkey="hashRate">Hash Rate</span></th>
-                    <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1m">15m</span></th>
+                    <th class="col11" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1m">15m</span></th>
                     <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">1h</span></th>
                     <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">6h</span> </th>
-                    <th class="col6r" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
+                    <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
                     <th class="col7"><span tkey="lastShare">Last Share</span> </th>
                     <th class="col8"><span tkey="validShares">Valid Shares</span> </th>
                     <th class="col9"><span tkey="invalidShares">Invalid Shares</span> </th>
@@ -513,7 +513,7 @@ function getWorkerCells(worker){
     return '<td class="col1"><i class="fa fa-' + (status == 'ok' ? 'check status-ok' : 'times status-error') + '"></i></td>' +
            '<td class="col2">' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + '</td>' +
            '<td class="col3">' + getReadableHashRateString(hashrate) + '/s</td>' +
-           '<td class="col4">' + getReadableHashRateString(hashrate15m) + '/s</td>' +
+           '<td class="col11">' + getReadableHashRateString(hashrate15m) + '/s</td>' +
            '<td class="col4">' + getReadableHashRateString(hashrate1h) + '/s</td>' +
            '<td class="col5">' + getReadableHashRateString(hashrate6h) + '/s</td>' +
            '<td class="col6">' + getReadableHashRateString(hashrate24h) + '/s</td>' +
