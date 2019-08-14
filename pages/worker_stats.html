@@ -128,8 +128,8 @@
                 <thead>
                 <tr>
                     <th class="col1"><span tkey="timeSent">Time Sent</span></th>
+                    <th class="col3"><span tkey="amount">Amount</span></th>                    
                     <th class="col2"><span tkey="transactionHash">Transaction Hash</span></th>
-                    <th class="col3"><span tkey="amount">Amount</span></th>
                     <th class="col4"><span tkey="mixin">Mixin</span></th>
                 </tr>
                 </thead>
@@ -509,16 +509,19 @@ function getWorkerCells(worker){
     var hashes = (worker.hashes || 0).toString();
     var status = (hashrate <= 0) ? 'error' : 'ok';
 
-    return '<td class="col1" data-sort="' + status + '"><i class="fa fa-' + (status == 'ok' ? 'check status-ok' : 'times status-error') + '"></i></td>' +
+    return '<td colspan="10">' + (worker.name != 'undefined' ? worker.name : '') + '</td>'
+           '<td class="col1" data-sort="' + status + '"><i class="fa fa-' + (status == 'ok' ? 'check status-ok' : 'times status-error') + '"></i></td>' +
            '<td class="col2" data-sort="' + (worker.name != 'undefined' ? worker.name : '') + '">' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + '</td>' +
            '<td class="col3" data-sort="' + hashrate + '">' + getReadableHashRateString(hashrate) + '/s</td>' +
            '<td class="col4 avghr" data-sort="' + hashrate1h + '">' + getReadableHashRateString(hashrate1h) + '/s</td>' +
            '<td class="col5 avghr" data-sort="' + hashrate6h + '">' + getReadableHashRateString(hashrate6h) + '/s</td>' +
            '<td class="col6 avghr" data-sort="' + hashrate24h + '">' + getReadableHashRateString(hashrate24h) + '/s</td>' +
-           '<td class="col7" data-sort="' + lastShare + '">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
+           '<td class="col7" data-sort="' + lastShare + '">' + '</td>' +
            '<td class="col8" data-sort="' + validShares + '">' + validShares + '</td>' +
            '<td class="col9" data-sort="' + invalidShares + '">' + invalidShares + '</td>' +
-           '<td class="col10" data-sort="' + hashes + '">' + hashes + '</td>';
+           '<td class="col10" data-sort="' + hashes + '">'  + '</td>' +
+           '<td colspan="5">' + (lastShare ? $.timeago(new Date(parseInt(lastShare) * 1000).toISOString()) : 'Never') + '</td>' +
+           '<td colspan="5">' + hashes + '</td>';
 }
 
 // Handle sort on workers table
@@ -549,7 +552,7 @@ function renderWorkers(workersData){
 
     for (var i = 0; i < workersData.length; i++){
         var worker = workersData[i];
-	if (Date.now()/1000 - parseInt(worker.lastShare) > 2 * 86400) continue;
+	    if (Date.now()/1000 - parseInt(worker.lastShare) > 2 * 86400) continue;
         if (!have_avg_hr && 'hashrate_1h' in worker) have_avg_hr = true;
         var workerJson = JSON.stringify(worker);
         var existingRow = document.getElementById('workerRow_' + getWorkerRowId(worker.name));    
@@ -598,8 +601,8 @@ function getPaymentRowElement(payment, jsonString){
 // Get payment cells
 function getPaymentCells(payment){
     return '<td class="col1">' + formatDate(payment.time) + '</td>' +
-           '<td class="col2">' + formatPaymentLink(payment.hash) + '</td>' +
            '<td class="col3">' + getReadableCoins(payment.amount) + '</td>' +
+           '<td class="col2">' + formatPaymentLink(payment.hash) + '</td>' +
            '<td class="col4">' + payment.mixin + '</td>';
 }
 
