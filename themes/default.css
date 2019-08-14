@@ -795,6 +795,7 @@ table th.sort:hover{
   #workersReport table .col3,
   #workersReport table .col4,
   #workersReport table .col5,
+  #workersReport table .col9,
   #workersReport table .col6 {
     width:120px;
   }  
