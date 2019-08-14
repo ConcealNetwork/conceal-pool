@@ -677,7 +677,7 @@ hr {
 .table:not([class*=" table-colored"]) tbody tr th,
 .table:not([class*=" table-colored"]) tbody tr td {
   border-color: #343a40;
-  color: #868ba1; }
+  color: #cccccc; }
 
 .table-striped tbody tr:nth-child(odd) th,
 .table-striped tbody tr:nth-child(odd) td {
