@@ -509,9 +509,9 @@ function getWorkerCells(worker){
     var hashes = (worker.hashes || 0).toString();
     var status = (hashrate <= 0) ? 'error' : 'ok';
 
-    return '<td colspan="10">' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + '</td>' + 
+    return 
            '<td class="col1" data-sort="' + status + '"><i class="fa fa-' + (status == 'ok' ? 'check status-ok' : 'times status-error') + '"></i></td>' +
-           '<td class="col2" data-sort="' + (worker.name != 'undefined' ? worker.name : '') + '">'  + '</td>' +
+           '<td class="col2" data-sort="' + (worker.name != 'undefined' ? worker.name : '') + '">' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + '</td>' +
            '<td class="col3" data-sort="' + hashrate + '">' + getReadableHashRateString(hashrate) + '/s</td>' +
            '<td class="col4 avghr" data-sort="' + hashrate1h + '">' + getReadableHashRateString(hashrate1h) + '/s</td>' +
            '<td class="col5 avghr" data-sort="' + hashrate6h + '">' + getReadableHashRateString(hashrate6h) + '/s</td>' +
