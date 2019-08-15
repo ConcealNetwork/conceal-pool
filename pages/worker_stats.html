@@ -563,8 +563,8 @@ function renderWorkers(workersData){
         }
     }
 
-    updateText('totalValidShares', total_valid_shares || '0'));
-    updateText('totalinValidShares', total_invalid_shares || '0'));
+    updateText('totalValidShares', total_valid_shares || '0');
+    updateText('totalinValidShares', total_invalid_shares || '0');
 
     if (!have_avg_hr) $('#workersReport .avghr').hide();
     else $('#workersReport .avghr').show();
