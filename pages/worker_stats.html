@@ -562,7 +562,7 @@ function renderWorkers(workersData){
         var hashrate = worker.hashrate ? worker.hashrate : 0;
         var status = (hashrate <= 0) ? 'error' : 'ok';
         var elements = workersData.length - 1;
-        var separatar = (i = elements) ? '' : '-';
+        var separatar = (i == elements) ? '' : '-';
         workerStatusSummary = workerStatusSummary + '<i class="fa fa-' + (status == 'ok' ? 'check status-ok" style="color: green;"' : 'times status-error" style="color: red;"') + '></i>' + '  ' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + '  ' + separatar;        
         var existingRow = document.getElementById('workerRow_' + getWorkerRowId(worker.name));    
         if (existingRow && existingRow.getAttribute('data-json') !== workerJson){
