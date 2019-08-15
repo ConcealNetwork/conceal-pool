@@ -26,7 +26,7 @@
             </div>
             <br />
             <div class="yourStats col-md-12 col-lg-12">
-                    <center><span id="workerStatusSummary"></p></center>
+                 <center><span id="workerStatusSummary"></p></center>
             </div><!-- col-4 -->
         <br />
         </div>
@@ -560,9 +560,8 @@ function renderWorkers(workersData){
         var hashrate = worker.hashrate ? worker.hashrate : 0;
         var status = (hashrate <= 0) ? 'error' : 'ok';
         var elements = workersData.length - 1;
-        var separatar = (i = elements) ? '' : '&nbsp;&nbsp;-&nbsp;&nbsp;';
+        var separatar = '  -  ';
         workerStatusSummary = workerStatusSummary + '<i class="fa fa-' + (status == 'ok' ? 'check status-ok" style="color: green;"' : 'times status-error" style="color: red;"') + '></i>' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + separatar;        
-
         var existingRow = document.getElementById('workerRow_' + getWorkerRowId(worker.name));    
         if (existingRow && existingRow.getAttribute('data-json') !== workerJson){
             $(existingRow).replaceWith(getWorkerRowElement(worker, workerJson));
