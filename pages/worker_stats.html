@@ -41,7 +41,7 @@
               <p class="mg-b-0"><strong class="tx-medium">Average Hashrate 1h|6h|24h</strong> <span id="yourHR1h" class="text-muted"></span> | <span id="yourHR6h" class="text-muted"></span> | <span id="yourHR24h" class="text-muted"></span></p>
             </li>
             <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Valid Shares | Invalid Shares</strong> <span id="totalValidShares" class="text-muted"></span> | <span id="totalInvalidShares" class="text-muted"></span></p>
+                    <p class="mg-b-0"><strong class="tx-medium">Shares</strong> Valid Shares: <span id="totalValidShares" class="text-muted" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;" class="text-muted"></span></p>
                   </li>            
             <li class="list-group-item">
               <p class="mg-b-0"><strong class="tx-medium">Last Share</strong> <span id="yourLastShare" class="text-muted"></span></p>
@@ -564,7 +564,7 @@ function renderWorkers(workersData){
     }
 
     updateText('totalValidShares', total_valid_shares || '0');
-    updateText('totalinValidShares', total_invalid_shares || '0');
+    updateText('totalInvalidShares', total_invalid_shares || '0');
 
     if (!have_avg_hr) $('#workersReport .avghr').hide();
     else $('#workersReport .avghr').show();
