@@ -35,7 +35,7 @@
 
       <div class="dash-headline-right">
         <div class="dash-headline-right-top">
-          <div class="dash-headline-item-two">
+          <div class="dash-headline-item-one">
             <div id="chartCurrDiff" class="dash-chartist">
               <canvas id="chartCurrDiffCanvas"></canvas>
               <a class="chart-style"></a>
@@ -48,40 +48,6 @@
           </div>
           <!-- dash-headline-item-two -->
         </div>
-        <!-- dash-headline-right-top -->
-        <div class="dash-headline-right-bottom">
-          <div class="dash-headline-right-bottom-left">
-            <div class="dash-headline-item-three">
-              <span id="chartMiners" class="sparkline wd-100p"></span>
-              <div>
-                <h2 style="color: white;">
-                  <span id="poolMiners">N/A</span>
-                  <span>(<strong>
-                      <span id="poolWorkers">N/A</span></strong>
-                    <span tkey="workersCount">workers</span>)</span>
-                </h2>
-                <p class="item-label">Miners / Workers</p>
-              </div>
-            </div>
-            <!-- dash-headline-item-three -->
-          </div>
-          <!-- dash-headline-right-bottom-left -->
-          <div class="dash-headline-right-bottom-right">
-            <div class="dash-headline-item-three">
-              <span id="chartBlocksFound" class="sparkline wd-100p"></span>
-              <div>
-                <h2 style="color: white;">
-                  <span id="blocksTotal">N/A</span>
-                  <br>
-                  (<span id="poolLastBlockFound">Never</span>)</h2>
-                <p class="item-label">Blocks found</p>
-              </div>
-            </div>
-            <!-- dash-headline-item-three -->
-          </div>
-          <!-- dash-headline-right-bottom-right -->
-        </div>
-        <!-- dash-headline-right-bottom -->
       </div>
       <!-- wd-50p -->
     </div>
@@ -597,13 +563,13 @@
       }
 
       diffChart = new Chart(document.getElementById('chartCurrDiffCanvas'), {
-        type: 'line',
+        type: 'bat',
         data: {
           labels: graphData.diff.names,
           datasets: [
             {
               data: graphData.diff.values,
-              backgroundColor: 'rgba(255,165,0,0.2)',
+              backgroundColor: 'rgba(255,165,0,0.8)',
               fill: true,
               borderWidth: 0,
               borderColor: '#FFA500'
@@ -611,7 +577,7 @@
           ]
         },
         options: {
-          animation: false,
+          animation: true,
           responsive: true,
           maintainAspectRatio: false,
           legend: {
