@@ -702,9 +702,9 @@ function getPaymentRowElement(payment, jsonString){
 // Get blockFound row element
 function getBlocksFoundRowElement(blocksFoundData){
     var row = document.createElement('tr');
-    row.innerHTML = '<td class="col1">' + block.block + '</td>' +
-           '<td class="col3">' + block.difficulty + '</td>' +
-           '<td class="col2">' + block.hash + '</td>';
+    row.innerHTML = '<td class="col1">' + blocksFoundData.block + '</td>' +
+           '<td class="col3">' + blocksFoundData.difficulty + '</td>' +
+           '<td class="col2">' + blocksFoundData.hash + '</td>';
     return row;
 }
 
@@ -831,7 +831,10 @@ function renderBlocksFound(blocksFoundResults)
     for (var i = 0; i < blocksFoundResults.length; i += 2)
     {
         var blocksFound = parseBlocksFound(blocksFoundResults[i + 1], blocksFoundResults[i]);
-        var blocksFoundElement = getblocksFoundRowElement(blocksFound);
+        var blocksFoundElement = document.createElement('tr');
+        blocksFoundElement.innerHTML = '<td class="col1">' + blocksFoundData.block + '</td>' +
+           '<td class="col3">' + blocksFound.difficulty + '</td>' +
+           '<td class="col2">' + blocksFound.hash + '</td>';
         $blocksFoundRows.append(blocksFoundElement);
     }
 }
