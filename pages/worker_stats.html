@@ -26,7 +26,7 @@
             </div>
             <br />
             <div class="yourStats col-md-12 col-lg-12">
-                 <center><span id="workerStatusSummary"></p></center>
+                 <center><span id="workerStatusSummary"></span></center>
             </div><!-- col-4 -->
         <br />
         </div>
@@ -530,6 +530,8 @@ function renderWorkers(workersData){
     workersData = workersData.sort(sortWorkers);
     
     var $workersRows = $('#workersReport_rows');
+    var $workerStatus = $('#workerStatusSummary');
+
     
     for (var i = 0; i < workersData.length; i++){
         var existingRow = document.getElementById('workerRow_' + getWorkerRowId(workersData[i].name));
@@ -573,7 +575,7 @@ function renderWorkers(workersData){
     }
 
     // Update the valid and invalid share totals in the table
-    updateText('workerStatusSummary', workerStatusSummary || '');
+    $workerStatus.replaceWith(workerStatusSummary);
     updateText('totalValidShares', total_valid_shares || '0');
     updateText('totalInvalidShares', total_invalid_shares || '0');
 
