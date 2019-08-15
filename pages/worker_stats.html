@@ -831,8 +831,7 @@ function renderBlocksFound(blocksFoundResults)
     for (var i = 0; i < blocksFoundResults.length; i += 2)
     {
         var blocksFound = parseBlocksFound(blocksFoundResults[i + 1], blocksFoundResults[i]);
-        var blocksFoundElement = document.createElement('tr');
-        blocksFoundElement.innerHTML = '<td class="col1">' + blocksFoundData.block + '</td>' +
+        var blocksFoundElement = '<td class="col1">' + blocksFound.block + '</td>' +
            '<td class="col3">' + blocksFound.difficulty + '</td>' +
            '<td class="col2">' + blocksFound.hash + '</td>';
         $blocksFoundRows.append(blocksFoundElement);
