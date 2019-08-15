@@ -1,12 +1,13 @@
 <div class="container">
     <!-- Worker Statistics -->
     <div class="slim-pageheader">
-            
+            <h6 class="slim-pagetitle"><span tkey="minerStats">Your Stats &amp; Payment History</span></h6>
+
     </div><!-- slim-pageheader -->
 
         <!-- Hashrate -->
 
-        <div class="card card-dash-one mg-t-20">
+        <div class="card card-dash-one">
                 <div class="row no-gutters">
                   <div class="col-lg-3">
                     <div class="dash-content dash-small-info">
@@ -49,8 +50,6 @@
                 <!-- row -->
               </div>
               <!-- card -->
-
-          <br /><h6 class="slim-pagetitle"><span tkey="minerStats">Your Stats &amp; Payment History</span></h6>
 
     <div id="workerStats">
         <div class="yourStats push-up-20">
@@ -200,7 +199,13 @@ currentPage = {
             clearInterval(intervalChartsUpdate);
         }
     },
-    update: function(){}
+    update: function(){
+        updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
+        updateText('networkDifficulty', formatNumber(lastStats.network.difficulty.toString(), ' '));
+        updateText('blockchainHeight', formatNumber(lastStats.network.height.toString(), ' '));
+        updateText('currentEffort', (lastStats.pool.roundHashes / lastStats.network.difficulty * 100).toFixed(1) + '%');
+
+    }
 };
 
 /**
