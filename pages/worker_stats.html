@@ -830,10 +830,11 @@ function renderBlocksFound(blocksFoundResults)
     for (var i = 0; i < blocksFoundResults.length; i += 2)
     {
         var blocksFound = parseBlocksFound(blocksFoundResults[i + 1], blocksFoundResults[i]);
-        var blocksFoundJson = JSON.stringify(blocksFound);
-        var blocksFoundElement = getblocksFoundRowElement(blocksFound, blocksFoundJson);
+        //var blocksFoundJson = JSON.stringify(blocksFound);
+        //var blocksFoundElement = getblocksFoundRowElement(blocksFound, blocksFoundJson);
         //$blocksFoundRows.append(blocksFoundElement);
     }
+    $blocksFoundRows.append("BOO");
 }
 
 // Load more payments button
