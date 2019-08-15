@@ -826,21 +826,24 @@ function renderPayments(paymentsResults){
 }
 
 // Render payments
-function renderBlocksFound(blocksFoundResults){
+function renderBlocksFound(blocksFoundResults)
+{
     var $blocksFoundRows = $('#blocksFoundReport_rows');
 
-    for (var i = 0; i < blocksFoundResults.length; i += 2){
+    for (var i = 0; i < blocksFoundResults.length; i += 2)
+    {
         var blocksFound = parseBlocksFound(blocksFoundResults[i + 1], blocksFoundResults[i]);
         var blocksFoundJson = JSON.stringify(blocksFound);
         var blocksFoundElement = getblocksFoundRowElement(blocksFound, blocksFoundJson);
 
         var existingRow = document.getElementById('blocksFoundRow' + blocksFound.block);
-        if (existingRow && existingRow.getAttribute('data-json') !== blocksFoundJson){
+        if (existingRow && existingRow.getAttribute('data-json') !== blocksFoundJson)
+        {
             $(existingRow).replaceWith(getblocksFoundRowElement(blocksFound, blocksFoundJson));
-        } else if (!existingRow){
+        } 
+        else if (!existingRow)
+        {
             $blocksFoundRows.append(blocksFoundElement);
-            }
-
         }
     }
 }
