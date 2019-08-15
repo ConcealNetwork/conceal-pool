@@ -70,12 +70,12 @@
               </li>            
           </ul>
         </div><!-- col-4 -->
-        <br />
     </div>   
 
         <!-- Workers -->
+        <br />
 
-<div class="input-group">
+    <div class="input-group">
         <input class="form-control" id="yourStatsInput" type="text" tplaceholder="enterYourAddress" placeholder="Enter Your Address">
         <span class="input-group-btn"><button class="btn btn-primary-outline" type="button" id="lookUp">
             <span><i class="fa fa-search"></i> <span tkey="lookup">Lookup</span></span>
@@ -84,36 +84,35 @@
     </div>
     <div id="addressError"></div>
     <div id="yourWorkers">
-    <br />
-    <div class="yourStats">
-        <h6 class="slim-pagetitle">WORKER STATS</h6>
-<br />
-        <div id="workersReport" class="table-responsive">
-            <table class="table table-hover table-striped">
-                <thead>
-                <tr>
-                    <th class="col1"><span tkey="status">Status</span> </th>
-                    <th class="col2"><span tkey="workerName">Name</span> </th>
-                    <th class="col3"><span tkey="hashRate">Hash Rate</span></th>
-                    <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">1h</span></th>
-                    <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">6h</span> </th>
-                    <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
-                    <th class="col7"><span tkey="lastShare">Last Share</span> </th>
-                    <th class="col8"><span tkey="validShares">Valid Shares</span> </th>
-                    <th class="col9"><span tkey="invalidShares">Invalid Shares</span> </th>
-                    <th class="col10"><span tkey="totalHashes">Total Hashes</span> </th>
-                </tr>
-                </thead>
-                <tbody id="workersReport_rows">
-
-                </tbody>
-            </table>
-        </div>
-        
+        <br />
+        <div class="yourStats">
+            <h6 class="slim-pagetitle">WORKER STATS</h6>
+            <br />
+            <div id="workersReport" class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col1"><span tkey="status">Status</span> </th>
+                        <th class="col2"><span tkey="workerName">Name</span> </th>
+                        <th class="col3"><span tkey="hashRate">Hash Rate</span></th>
+                        <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">1h</span></th>
+                        <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">6h</span> </th>
+                        <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
+                        <th class="col7"><span tkey="lastShare">Last Share</span> </th>
+                        <th class="col8"><span tkey="validShares">Valid Shares</span> </th>
+                        <th class="col9"><span tkey="invalidShares">Invalid Shares</span> </th>
+                        <th class="col10"><span tkey="totalHashes">Total Hashes</span> </th>
+                    </tr>
+                    </thead>
+                    <tbody id="workersReport_rows">
+                    </tbody>
+                </table>
+            </div>
+            
         <!-- Payments -->
         <br /><br />
         <h6 class="slim-pagetitle">PAYMENT HISTORY</h6>
-<br />
+        <br />
         <div id="workerPayments" class="table-responsive">
             <table class="table table-hover table-striped">
                 <thead>
