@@ -19,17 +19,35 @@
           <canvas id="chartPoolHashrateCanvas"></canvas>
           <a class="chart-style"></a>
         </div>
-      </div><!-- dash-headline-item-one -->
-    </div><!-- dash-headline-left -->
+        <div class="dash-item-overlay">
+          <h1>
+            <span class="mediumText" id="poolHashrate">N/A</span>
+            <span class="smallText">(<span id="hashPower">0%</span>)</h1>
+            <p class="earning-label" tkey="poolHashrate">Pool Hashrate</p>
+        </div>
+      </div>
+        <!-- dash-headline-item-one -->
 
-    <div class="dash-headline-right">
-        <div class="dash-headline-item-one">
-          <div id="chartCurrDiff" class="dash-chartist">
-            <canvas id="chartCurrDiffCanvas"></canvas>
-            <a class="chart-style"></a>
+      </div>
+      <!-- dash-headline-left -->
+
+      <div class="dash-headline-right">
+        <div class="dash-headline-right-top">
+          <div class="dash-headline-item-two">
+            <div id="chartCurrDiff" class="dash-chartist">
+              <canvas id="chartCurrDiffCanvas"></canvas>
+              <a class="chart-style"></a>
+            </div>
+            <div class="dash-item-overlay">
+              <h4>
+                <span id="networkDifficulty">N/A</span></h4>
+              <p class="item-label">Current Difficulty</p>
+            </div>
           </div>
-        </div><!-- dash-headline-item-one -->
-      </div><!-- dash-headline-left -->
+          <!-- dash-headline-item-two -->
+        </div>
+      </div>
+      <!-- wd-50p -->
     </div>
     <!-- d-flex ht-100v -->
 
@@ -332,7 +350,7 @@
 			}
 
       marketPriceChart = new Chart(document.getElementById('chartMarketPriceCanvas'), {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: timeLabels,
           datasets: [
@@ -506,7 +524,7 @@
           datasets: [
             {
               data: graphData.hashrate.values,
-              backgroundColor: 'rgba(255,165,0,0.7)',
+              backgroundColor: 'rgba(255,165,0,0.2)',
               fill: true,
               borderWidth: 0,
               borderColor: '#FFA500'
@@ -543,13 +561,13 @@
       }
 
       diffChart = new Chart(document.getElementById('chartCurrDiffCanvas'), {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: graphData.diff.names,
           datasets: [
             {
               data: graphData.diff.values,
-              backgroundColor: 'rgba(255,165,0,0.8)',
+              backgroundColor: 'rgba(255,165,0,0.2)',
               fill: true,
               borderWidth: 0,
               borderColor: '#FFA500'
@@ -557,7 +575,7 @@
           ]
         },
         options: {
-          animation: true,
+          animation: false,
           responsive: true,
           maintainAspectRatio: false,
           legend: {
