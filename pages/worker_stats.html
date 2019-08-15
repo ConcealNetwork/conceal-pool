@@ -702,7 +702,9 @@ function getPaymentRowElement(payment, jsonString){
 // Get blockFound row element
 function getBlocksFoundRowElement(blocksFoundData){
     var row = document.createElement('tr');
-    row.innerHTML = getBlocksFoundCells(blocksFoundData);
+    row.innerHTML = '<td class="col1">' + block.block + '</td>' +
+           '<td class="col3">' + block.difficulty + '</td>' +
+           '<td class="col2">' + block.hash + '</td>';
     return row;
 }
 
