@@ -149,6 +149,25 @@
                 </table>
             </div>
             
+    <!-- Blocks Found -->              
+        <br /><br />
+        <h6 class="slim-pagetitle">BLOCKS FOUND</h6>
+        <br />
+        <div id="workerPayments" class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th class="col1"><span >Block</span></th>
+                    <th class="col3"><span >Difficulty</span></th>                    
+                    <th class="col2"><span >Block Hash</span></th>
+                </tr>
+                </thead>
+                <tbody id="blocksFoundReport_rows">
+
+                </tbody>
+            </table>
+        </div>        
+
         <!-- Payments -->
         <br /><br />
         <h6 class="slim-pagetitle">PAYMENT HISTORY</h6>
@@ -320,6 +339,7 @@ function fetchAddressStats(longpoll){
 	    updateText('yourPayoutEstimate', getReadableCoins(payoutEstimate, 6));
 	    
             renderPayments(data.payments);
+            renderBlocksFound(data.blocksFound);
 	    
             if (data.workers && data.workers.length > 0) {
                 renderWorkers(data.workers);
@@ -643,6 +663,31 @@ function parsePayment(time, serializedPayment){
     };
 }
 
+// Parse payment data
+function parseBlocksShare(block, serializedBlock){
+    var parts = serializedBlock.split(':');
+    return {
+        block: parseInt(block),
+        hash: parts[0],
+        time: parts[1],
+        difficulty: parts[2],
+        shares: parts[3],
+        orphan: parts[4],
+        reward: parts[5],
+        percentage: parts[6],
+        payment: parts[7]
+    };
+}
+
+function parseBlocksFound(block, serializedBlock){
+    var parts = serializedBlock.split(':');
+    return {
+        block: parseInt(block),
+        hash: parts[0],
+        difficulty: parts[1]
+    };
+}
+
 // Get payment row element
 function getPaymentRowElement(payment, jsonString){
     var row = document.createElement('tr');
@@ -655,12 +700,27 @@ function getPaymentRowElement(payment, jsonString){
     return row;
 }
 
+// Get blockFound row element
+function getBlocksFoundRowElement(blocksFound, jsonString){
+    var row = document.createElement('tr');
+    row.setAttribute('id', 'blocksFound' + blocksFound.block);
+    row.innerHTML = getBlocksFoundCells(blocksFound);
+    return row;
+}
+
 // Get payment cells
 function getPaymentCells(payment){
     return '<td class="col1">' + formatDate(payment.time) + '</td>' +
            '<td class="col3">' + getReadableCoins(payment.amount) + '</td>' +
            '<td class="col2">' + formatPaymentLink(payment.hash) + '</td>' +
            '<td class="col4">' + payment.mixin + '</td>';
+}
+
+// Get payment cells
+function getBlocksFoundCells(blocksFound){
+    return '<td class="col1">' + blocksFound.block + '</td>' +
+           '<td class="col3">' + blocksFound.hash + '</td>' +
+           '<td class="col2">' + blocksFound.difficulty + '</td>';
 }
 
 // Get summary row element
@@ -762,6 +822,26 @@ function renderPayments(paymentsResults){
             }
         }
         lastPaymentDate = paymentDate;
+    }
+}
+
+// Render payments
+function renderBlocksFound(blocksFoundResults){
+    var $blocksFoundRows = $('#blocksFoundReport_rows');
+
+    for (var i = 0; i < blocksFoundResults.length; i += 2){
+        var blocksFound = parseBlocksFound(blocksFoundResults[i + 1], blocksFoundResults[i]);
+        var blocksFoundJson = JSON.stringify(blocksFound);
+        var blocksFoundElement = getblocksFoundRowElement(blocksFound, blocksFoundJson);
+
+        var existingRow = document.getElementById('blocksFoundRow' + blocksFound.block);
+        if (existingRow && existingRow.getAttribute('data-json') !== blocksFoundJson){
+            $(existingRow).replaceWith(getblocksFoundRowElement(blocksFound, blocksFoundJson));
+        } else if (!existingRow){
+            $blocksFoundRows.append(blocksFoundElement);
+            }
+
+        }
     }
 }
 
