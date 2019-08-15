@@ -26,7 +26,7 @@
             </div>
             <br />
             <div class="yourStats col-md-12 col-lg-12">
-                    <p class="mg-b-0"><i class="fa fa-check status-ok" style="color: green;"></i>&nbsp;&nbsp;<strong class="tx-medium">worker 1</strong> &nbsp;&nbsp;-&nbsp;&nbsp; <i class="fa fa-check status-ok" style="color: green;"></i>&nbsp;<strong class="tx-medium">worker 2</strong></p>
+                    <center><p class="workerStatusSummary"></p></center>
             </div><!-- col-4 -->
         <br />
         </div>
@@ -38,7 +38,7 @@
               <p class="mg-b-0"><strong class="tx-medium">Current Hashrate</strong> <span id="yourHashrateHolder" class="text-muted"></span></p>
             </li>
             <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Average Hashrate 1h|6h|24h</strong> <span id="yourHR1h" class="text-muted"></span> | <span id="yourHR6h" class="text-muted"></span> | <span id="yourHR24h" class="text-muted"></span></p>
+              <p class="mg-b-0"><strong class="tx-medium">Average hashrate</strong> 1h: <span id="yourHR1h" class="text-muted"></span> | 6h: <span id="yourHR6h" class="text-muted"></span> | 24h: <span id="yourHR24h" class="text-muted"></span></p>
             </li>
             <li class="list-group-item">
                     <p class="mg-b-0"><strong class="tx-medium">Shares</strong> Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
@@ -540,19 +540,31 @@ function renderWorkers(workersData){
     }
 
     var have_avg_hr = false;
+
+    // Initialize valid and invalid share totals
     var total_valid_shares = 0;
     var total_invalid_shares = 0;
-
+    var workerStatusSummary = '';
 
     for (var i = 0; i < workersData.length; i++){
         var worker = workersData[i];
 	    if (Date.now()/1000 - parseInt(worker.lastShare) > 2 * 86400) continue;
         if (!have_avg_hr && 'hashrate_1h' in worker) have_avg_hr = true;
         var workerJson = JSON.stringify(worker);
+
+        // Build the totals for valid and invalid shares from the worker data
         var validShares = worker.validShares ? worker.validShares : 0;
         total_valid_shares = total_valid_shares + validShares;
         var invalidShares = worker.invalidShares ? worker.invalidShares : 0;
         total_invalid_shares = total_invalid_shares + invalidShares;
+
+        // Build the string for worker status summary
+        var hashrate = worker.hashrate ? worker.hashrate : 0;
+        var status = (hashrate <= 0) ? 'error' : 'ok';
+        var elements = workersData.length - 1;
+        var separatar = (i = elements) ? '' : '&nbsp;&nbsp;-&nbsp;&nbsp;';
+        workerStatusSummary = workerStatusSummary + '<i class="fa fa-' + (status == 'ok' ? 'check status-ok" style="color: green;"' : 'times status-error" style="color: red;"') + '></i>' + (worker.name != 'undefined' ? worker.name : '<em>Undefined</em>') + separatar;        
+
         var existingRow = document.getElementById('workerRow_' + getWorkerRowId(worker.name));    
         if (existingRow && existingRow.getAttribute('data-json') !== workerJson){
             $(existingRow).replaceWith(getWorkerRowElement(worker, workerJson));
@@ -563,6 +575,8 @@ function renderWorkers(workersData){
         }
     }
 
+    // Update the valid and invalid share totals in the table
+    updateText('workerStatusSummary', workerStatusSummary || '');
     updateText('totalValidShares', total_valid_shares || '0');
     updateText('totalInvalidShares', total_invalid_shares || '0');
 
