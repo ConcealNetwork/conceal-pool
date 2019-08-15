@@ -831,9 +831,10 @@ function renderBlocksFound(blocksFoundResults)
     for (var i = 0; i < blocksFoundResults.length; i += 2)
     {
         var blocksFound = parseBlocksFound(blocksFoundResults[i + 1], blocksFoundResults[i]);
-        var blocksFoundElement = '<td class="col1">' + blocksFound.block + '</td>' +
+        var blocksFoundElement = 
+           '<tr><td class="col1">' + blocksFound.block + '</td>' +
            '<td class="col3">' + blocksFound.difficulty + '</td>' +
-           '<td class="col2">' + blocksFound.hash + '</td>';
+           '<td class="col2">' + blocksFound.hash + '</td></tr>';
         $blocksFoundRows.append(blocksFoundElement);
     }
 }
