@@ -26,7 +26,7 @@
             </div>
             <br />
             <div class="yourStats col-md-12 col-lg-12">
-                    <center><p class="workerStatusSummary"></p></center>
+                    <center><span id="workerStatusSummary"></p></center>
             </div><!-- col-4 -->
         <br />
         </div>
@@ -551,13 +551,11 @@ function renderWorkers(workersData){
 	    if (Date.now()/1000 - parseInt(worker.lastShare) > 2 * 86400) continue;
         if (!have_avg_hr && 'hashrate_1h' in worker) have_avg_hr = true;
         var workerJson = JSON.stringify(worker);
-
         // Build the totals for valid and invalid shares from the worker data
         var validShares = worker.validShares ? worker.validShares : 0;
         total_valid_shares = total_valid_shares + validShares;
         var invalidShares = worker.invalidShares ? worker.invalidShares : 0;
         total_invalid_shares = total_invalid_shares + invalidShares;
-
         // Build the string for worker status summary
         var hashrate = worker.hashrate ? worker.hashrate : 0;
         var status = (hashrate <= 0) ? 'error' : 'ok';
