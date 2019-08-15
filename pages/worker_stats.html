@@ -166,7 +166,24 @@
                 </tbody>
             </table>
         </div>        
-
+<!-- Blocks Sahre -->              
+<br /><br />
+<h6 class="slim-pagetitle">RECENT BLOCKS</h6>
+<br />
+<div id="workerBlocksFound" class="table-responsive">
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th class="col1"><span >Height</span></th>
+            <th class="col3"><span >Reward</span></th>      
+            <th class="col3"><span >Percentage</span></th>                                  
+            <th class="col2"><span >Payment</span></th>
+        </tr>
+        </thead>
+        <tbody id="blocksShareReport_rows">
+        </tbody>
+    </table>
+</div>        
         <!-- Payments -->
         <br /><br />
         <h6 class="slim-pagetitle">PAYMENT HISTORY</h6>
@@ -835,6 +852,22 @@ function renderBlocksFound(blocksFoundResults)
            '<tr><td class="col1">' + blocksFound.block + '</td>' +
            '<td class="col3">' + blocksFound.difficulty + '</td>' +
            '<td class="col2">' + blocksFound.hash + '</td></tr>';
+        $blocksFoundRows.append(blocksFoundElement);
+    }
+}
+
+function renderBlocksShare(blocksShareResults)
+{
+    var $blocksFoundRows = $('#blocksShareReport_rows');
+
+    for (var i = 0; i < blocksShareResults.length; i += 2)
+    {
+        var blocksFound = parseBlocksShare(blocksShareResults[i + 1], blocksShareResults[i]);
+        var blocksFoundElement = 
+           '<tr><td class="col1">' + blocksFound.block + '</td>' +
+           '<td class="col3">' + blocksFound.reward + '</td>' +
+           '<td class="col3">' + blocksFound.percentage + '%</td>' +
+           '<td class="col2">' + getReadableCoins(blocksFound.payment) + '</td></tr>';
         $blocksFoundRows.append(blocksFoundElement);
     }
 }
