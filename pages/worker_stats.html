@@ -6,49 +6,6 @@
 
         <!-- Hashrate -->
 
-        <div class="card card-dash-one">
-                <div class="row no-gutters">
-                  <div class="col-lg-3">
-                    <div class="dash-content dash-small-info">
-                      <label class="tx-primary" tkey="networkHashrate">NETWORK HASHRATE</label>
-                      <h6>
-                        <span id="networkHashrate">N/A</span></h6>
-                    </div>
-                    <!-- dash-content -->
-                  </div>
-                  <!-- col-3 -->
-                  <div class="col-lg-3">
-                    <div class="dash-content dash-small-info">
-                      <label class="tx-primary" tkey="blockchainHeight">BLOCKCHAIN HEIGHT</label>
-                      <h6>
-                        <span id="blockchainHeight">N/A</span></h6>
-                    </div>
-                    <!-- dash-content -->
-                  </div>
-                  <!-- col-3 -->
-                  <div class="col-lg-3">
-                    <div class="dash-content dash-small-info">
-                      <label class="tx-primary" tkey="networkDifficulty">DIFFICULTY</label>
-                      <h6>
-                        <span id="networkDifficulty">N/A</span></h6>
-                    </div>
-                    <!-- dash-content -->
-                  </div>
-                  <!-- col-3 -->
-                  <div class="col-lg-3">
-                    <div class="dash-content dash-small-info">
-                      <label class="tx-primary" tkey="currentEffort">CURRENT EFFORT</label>
-                      <h6>
-                        <span id="currentEffort">N/A</span></h6>
-                    </div>
-                    <!-- dash-content -->
-                  </div>
-                  <!-- col-3 -->
-                </div>
-                <!-- row -->
-              </div>
-              <!-- card -->
-
     <div id="workerStats">
         <div class="yourStats push-up-20">
             <div class="card mg-t-20">
@@ -78,7 +35,7 @@
               <p class="mg-b-0"><strong class="tx-medium">Average hashrate</strong> 1h: <span id="yourHR1h" class="text-muted"></span> | 6h: <span id="yourHR6h" class="text-muted"></span> | 24h: <span id="yourHR24h" class="text-muted"></span></p>
             </li>
             <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Shares</strong> Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
+                    <p class="mg-b-0">Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
                   </li>            
             <li class="list-group-item">
               <p class="mg-b-0"><strong class="tx-medium">Last Share</strong> <span id="yourLastShare" class="text-muted"></span></p>
@@ -103,18 +60,50 @@
               <p class="mg-b-0"><strong class="tx-medium">Paid (7-Days)</strong> <span id="paid7d" class="text-muted"></span></p>
             </li>
             <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Current Round Contribution</strong> <span id="yourRoundShareProportion" class="text-muted"></span></p>
-            </li>
-            <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium">Estimated Payout</strong> <span id="yourPayoutEstimate" class="text-muted"></span></p>
-              </li>            
+              <p class="mg-b-0"><strong class="tx-medium">Current Round Contribution</strong> <span id="yourRoundShareProportion" class="text-muted"></span> | <strong class="tx-medium">Estimated Payout</strong> <span id="yourPayoutEstimate" class="text-muted"></span></p>
+            </li>           
           </ul>
         </div><!-- col-4 -->
     </div>   
 
+    <div class="card card-dash-one">
+        <div class="row no-gutters">
+          <div class="col-lg-4">
+            <div class="dash-content dash-small-info">
+              <label class="tx-primary" tkey="networkHashrate">NETWORK HASHRATE</label>
+              <h6>
+                <span id="networkHashrate">N/A</span></h6>
+            </div>
+            <!-- dash-content -->
+          </div>
+          <!-- col-3 -->
+          <div class="col-lg-4">
+            <div class="dash-content dash-small-info">
+              <label class="tx-primary" tkey="blockchainHeight">BLOCKCHAIN HEIGHT</label>
+              <h6>
+                <span id="blockchainHeight">N/A</span></h6>
+            </div>
+            <!-- dash-content -->
+          </div>
+          <!-- col-3 -->
+          <div class="col-lg-4">
+            <div class="dash-content dash-small-info">
+              <label class="tx-primary" tkey="networkDifficulty">DIFFICULTY</label>
+              <h6>
+                <span id="networkDifficulty">N/A</span></h6>
+            </div>
+            <!-- dash-content -->
+          </div>
+          <!-- col-3 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- card -->
         <!-- Workers -->
         <br />
 
+
+        
     <div class="input-group">
         <input class="form-control" id="yourStatsInput" type="text" tplaceholder="enterYourAddress" placeholder="Enter Your Address">
         <span class="input-group-btn"><button class="btn btn-primary-outline" type="button" id="lookUp">
