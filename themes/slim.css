@@ -248,7 +248,7 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #115da4;
+    color: orange;
     text-decoration: none; }
 
 a:not([href]):not([tabindex]) {
@@ -2170,7 +2170,7 @@ fieldset:disabled a.btn {
   color: #1b84e7;
   background-color: transparent; }
   .btn-link:hover {
-    color: #115da4;
+    color: orange;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent; }
@@ -3369,7 +3369,7 @@ tbody.collapse.show {
   background-color: #fff;
   border: 1px solid #dee2e6; }
   .page-link:hover {
-    color: #115da4;
+    color: orange;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6; }
