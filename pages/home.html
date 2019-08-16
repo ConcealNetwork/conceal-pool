@@ -74,7 +74,7 @@
     <div class="yourStats row">
         <div class="col-md-6 col-lg-6">
             <h6 class="slim-pagetitle">
-                <span>Network</span></h6>
+                <span>Network</span></h6><br />
             <ul class="list-group">
                 <li class="list-group-item">
                 <p class="mg-b-0"><strong class="tx-medium" tkey="networkHashrate">Network Hashrate</strong> <span id="networkHashrate" class="text-muted"></span></p>
@@ -97,6 +97,9 @@
                 <li class="list-group-item">
                 <p class="mg-b-0"><strong class="tx-medium" tkey="currentEffort">Current Effort</strong> <span id="currentEffort" class="text-muted"></span></p>
                 </li>
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium" tkey="lastHash">Last Hash</strong> <span id="lastHash" class="text-muted"></span></p>
+                </li>                
             </ul>
         </div><!-- Hashrate Stats -->
 
@@ -104,10 +107,10 @@
 
         <div class="col-md-6 col-lg-6 mg-t-20 mg-md-t-0-force">
             <h6 class="slim-pagetitle">
-                <span >Pool</span></h6>
+                <span >Pool</span></h6><br />
             <ul class="list-group">
                 <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium" tkey="poolHashrate">Pool Hashrate</strong> <span id="poolHashrate" class="text-muted"></span></p>
+                <p class="mg-b-0"><strong class="tx-medium" tkey="poolHashrate">Pool Hashrate</strong> <span id="poolHashrate2" class="text-muted"></span></p>
                 </li>       
                 <li class="list-group-item">
                 <p class="mg-b-0"><strong class="tx-medium" tkey="hashPower">Network Percentage</strong> <span id="hashPower" class="text-muted"></span></p>
@@ -407,7 +410,7 @@
         updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/s');
         updateText('networkDifficulty', formatNumber(lastStats.network.difficulty.toString(), ' '));
         updateText('blockchainHeight', formatNumber(lastStats.network.height.toString(), ' '));
-        //updateText('lastHash', lastStats.lastblock.hash).setAttribute('href', getBlockchainUrl(lastStats.lastblock.hash));
+        updateText('lastHash', lastStats.lastblock.hash).setAttribute('href', getBlockchainUrl(lastStats.lastblock.hash));
 
         if (lastStats.config.networkFee) {
           var networkFeePercent = lastStats.config.networkFee / 100;
@@ -417,6 +420,7 @@
         }
 
         updateText('poolHashrate', getReadableHashRateString(lastStats.pool.hashrate, 0) + '/s');
+        updateText('poolHashrate2', getReadableHashRateString(lastStats.pool.hashrate, 0) + '/s');
         updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
 
         var hashPower = lastStats.pool.hashrate / (lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) * 100;
