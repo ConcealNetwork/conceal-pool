@@ -162,7 +162,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 body {
   margin: 0;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.875rem;
+  font-size: 15px;
   font-weight: 300;
   line-height: 1.5;
   color: #dddddd;
