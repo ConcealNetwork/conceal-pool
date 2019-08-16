@@ -1,13 +1,10 @@
 <div class="container">
-    <!-- Worker Statistics -->
     <br />
     <h6 class="slim-pagetitle"><span tkey="minerStats">Your Stats &amp; Payment History</span></h6>
-    <br />
-
-        <!-- Hashrate -->
-        <div class="yourStats col-md-12 col-lg-12">
-            <center><strong class="tx-medium">Round Contribution</strong> <span id="yourRoundShareProportion" class="text-muted"></span>% | <strong class="tx-medium">Current Effort</strong> <span id="currentEffort">N/A</span></center>
-       </div><!-- col-4 -->
+    <br />    
+    <div class="yourStats col-md-12 col-lg-12">
+        <center><strong class="tx-medium">Round Contribution</strong> <span id="yourRoundShareProportion" class="text-muted"></span>% | <strong class="tx-medium">Current Effort</strong> <span id="currentEffort">N/A</span></center>
+    </div><!-- col-12 -->
 
     <div id="workerStats">
         <div class="yourStats push-up-20">
@@ -25,189 +22,180 @@
             <div class="yourStats col-md-12 col-lg-12">
                  <center><span id="workerStatusSummary"></span></center>
             </div><!-- col-4 -->
+        <br />
+        </div><!-- Bar Chart and Rig Summary -->
 
+        <div class="yourStats row">
+            <div class="col-md-6 col-lg-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Current Hashrate</strong> <span id="yourHashrateHolder" class="text-muted"></span></p>
+                    </li>
+                    <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Average hashrate</strong> 1h: <span id="yourHR1h" class="text-muted"></span> | 6h: <span id="yourHR6h" class="text-muted"></span> | 24h: <span id="yourHR24h" class="text-muted"></span></p>
+                    </li>
+                    <li class="list-group-item">
+                            <p class="mg-b-0">Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
+                        </li>            
+                    <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Last Share</strong> <span id="yourLastShare" class="text-muted"></span></p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="mg-b-0"><strong class="tx-medium">Total shares</strong> <span id="yourHashes" class="text-muted"></span></p>
+                    </li>
+                </ul>
+            </div><!-- Hashrate Stats -->
 
-
-            
+            <div class="col-md-6 col-lg-6 mg-t-20 mg-md-t-0-force">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <p class="mg-b-0"><strong class="tx-medium">Pending Balance</strong> <span id="yourPendingBalance" class="text-muted"></span> | <strong class="tx-medium">Estimated Payout</strong> <span id="yourPayoutEstimate" class="text-muted"></span></span></p>
+                    </li>              
+                    <li class="list-group-item">
+                        <p class="mg-b-0"><strong class="tx-medium">Total Paid</strong> <span id="paidTotal" class="text-muted"></span></p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="mg-b-0"></i><strong class="tx-medium">Paid (24-Hours)</strong> <span id="paid24h" class="text-muted"></span></p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="mg-b-0"><strong class="tx-medium">Paid (7-Days)</strong> <span id="paid7d" class="text-muted"></span></p>
+                    </li>        
+                </ul>
+            </div><!-- Payout Stats -->
+        </div><!-- Stats Row -->   
 
         <br />
-        </div>
 
-    <div class="yourStats row">
-        <div class="col-md-6 col-lg-6">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Current Hashrate</strong> <span id="yourHashrateHolder" class="text-muted"></span></p>
-            </li>
-            <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Average hashrate</strong> 1h: <span id="yourHR1h" class="text-muted"></span> | 6h: <span id="yourHR6h" class="text-muted"></span> | 24h: <span id="yourHR24h" class="text-muted"></span></p>
-            </li>
-            <li class="list-group-item">
-                    <p class="mg-b-0">Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
-                  </li>            
-            <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Last Share</strong> <span id="yourLastShare" class="text-muted"></span></p>
-            </li>
-            <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium">Total shares</strong> <span id="yourHashes" class="text-muted"></span></p>
-              </li>
-          </ul>
-        </div><!-- col-4 -->
-
-        
-
-
-        <div class="col-md-6 col-lg-6 mg-t-20 mg-md-t-0-force">
-          <ul class="list-group">
-            <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Pending Balance</strong> <span id="yourPendingBalance" class="text-muted"></span> | <strong class="tx-medium">Estimated Payout</strong> <span id="yourPayoutEstimate" class="text-muted"></span></span></p>
-            </li>              
-            <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Total Paid</strong> <span id="paidTotal" class="text-muted"></span></p>
-            </li>
-            <li class="list-group-item">
-              <p class="mg-b-0"></i><strong class="tx-medium">Paid (24-Hours)</strong> <span id="paid24h" class="text-muted"></span></p>
-            </li>
-            <li class="list-group-item">
-              <p class="mg-b-0"><strong class="tx-medium">Paid (7-Days)</strong> <span id="paid7d" class="text-muted"></span></p>
-            </li>        
-          </ul>
-        </div><!-- col-4 -->
-    </div>   
-    <br />
-    <div class="card card-dash-one">
-        <div class="row no-gutters">
-          <div class="col-lg-4">
-            <div class="dash-content dash-small-info">
-              <label class="tx-primary" tkey="networkHashrate">NETWORK HASHRATE</label>
-              <h6>
-                <span id="networkHashrate">N/A</span></h6>
+        <div class="card card-dash-one">
+            <div class="row no-gutters">
+                <div class="col-lg-4">
+                    <div class="dash-content dash-small-info">
+                    <label class="tx-primary" tkey="networkHashrate">NETWORK HASHRATE</label>
+                    <h6>
+                        <span id="networkHashrate">N/A</span></h6>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dash-content dash-small-info">
+                        <label class="tx-primary" tkey="blockchainHeight">BLOCKCHAIN HEIGHT</label>
+                        <h6>
+                            <span id="blockchainHeight">N/A</span>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dash-content dash-small-info">
+                        <label class="tx-primary" tkey="networkDifficulty">DIFFICULTY</label>
+                        <h6>
+                            <span id="networkDifficulty">N/A</span>
+                        </h6>
+                    </div>
+                </div>
             </div>
-            <!-- dash-content -->
-          </div>
-          <!-- col-3 -->
-          <div class="col-lg-4">
-            <div class="dash-content dash-small-info">
-              <label class="tx-primary" tkey="blockchainHeight">BLOCKCHAIN HEIGHT</label>
-              <h6>
-                <span id="blockchainHeight">N/A</span></h6>
-            </div>
-            <!-- dash-content -->
-          </div>
-          <!-- col-3 -->
-          <div class="col-lg-4">
-            <div class="dash-content dash-small-info">
-              <label class="tx-primary" tkey="networkDifficulty">DIFFICULTY</label>
-              <h6>
-                <span id="networkDifficulty">N/A</span></h6>
-            </div>
-            <!-- dash-content -->
-          </div>
-          <!-- col-3 -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- card -->
-        <!-- Workers -->
+        </div><!-- Network Stat Boxes -->
+
         <br />
 
+        <div class="input-group">
+            <input class="form-control" id="yourStatsInput" type="text" tplaceholder="enterYourAddress" placeholder="Enter Your Address">
+            <span class="input-group-btn"><button class="btn btn-primary-outline" type="button" id="lookUp">
+                <span><i class="fa fa-search"></i> <span tkey="lookup">Lookup</span></span>
+                <span><i class="fa fa-refresh fa-spin"></i> <span tkey="searching">Searching...</span></span>
+            </button></span>
+        </div><!-- Wallet Address Box -->
+        <div id="addressError"></div>
 
-        
-    <div class="input-group">
-        <input class="form-control" id="yourStatsInput" type="text" tplaceholder="enterYourAddress" placeholder="Enter Your Address">
-        <span class="input-group-btn"><button class="btn btn-primary-outline" type="button" id="lookUp">
-            <span><i class="fa fa-search"></i> <span tkey="lookup">Lookup</span></span>
-            <span><i class="fa fa-refresh fa-spin"></i> <span tkey="searching">Searching...</span></span>
-        </button></span>
-    </div>
-    <div id="addressError"></div>
-    <div id="yourWorkers">
-        <br />
-        <div class="yourStats">
-            <h6 class="slim-pagetitle">WORKER STATS</h6>
+        <div id="yourWorkers">
             <br />
-            <div id="workersReport" class="table-responsive">
+
+            <!-- Individual Worker Stats -->
+            <div class="yourStats">
+                <h6 class="slim-pagetitle">WORKER STATS</h6>
+                <br />
+                <div id="workersReport" class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th class="col1"><span tkey="status">Status</span> </th>
+                            <th class="col2"><span tkey="workerName">Name</span> </th>
+                            <th class="col3"><span tkey="hashRate">Hash Rate</span></th>
+                            <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">1h</span></th>
+                            <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">6h</span> </th>
+                            <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
+                            <th class="col7"><span tkey="lastShare">Last Share</span> </th>
+                            <th class="col8"><span tkey="validShares">Valid Shares</span> </th>
+                            <th class="col9"><span tkey="invalidShares">Invalid Shares</span> </th>
+                            <th class="col10"><span tkey="totalHashes">Total Hashes</span> </th>
+                        </tr>
+                        </thead>
+                        <tbody id="workersReport_rows">
+                        </tbody>
+                    </table>
+                </div>
+            
+            <!-- Blocks Found -->                          
+            <br /><br />
+            <h6 class="slim-pagetitle">BLOCKS FOUND</h6>
+            <br />
+            <div id="workerBlocksFound" class="table-responsive">
                 <table class="table table-hover table-striped">
                     <thead>
                     <tr>
-                        <th class="col1"><span tkey="status">Status</span> </th>
-                        <th class="col2"><span tkey="workerName">Name</span> </th>
-                        <th class="col3"><span tkey="hashRate">Hash Rate</span></th>
-                        <th class="col4" title="Average hashrate over the last hour (only includes times the worker was active)"><span tkey="hashRate1h">1h</span></th>
-                        <th class="col5" title="Average hashrate over the last six hours (only includes times the worker was active)"><span tkey="hashRate6h">6h</span> </th>
-                        <th class="col6" title="Average hashrate over the last day (only includes times the worker was active)"><span tkey="hashRate24h">24h</span> </th>
-                        <th class="col7"><span tkey="lastShare">Last Share</span> </th>
-                        <th class="col8"><span tkey="validShares">Valid Shares</span> </th>
-                        <th class="col9"><span tkey="invalidShares">Invalid Shares</span> </th>
-                        <th class="col10"><span tkey="totalHashes">Total Hashes</span> </th>
+                        <th class="col1"><span >Height</span></th>
+                        <th class="col3"><span >Difficulty</span></th>                    
+                        <th class="col2"><span >Block Hash</span></th>
                     </tr>
                     </thead>
-                    <tbody id="workersReport_rows">
+                    <tbody id="blocksFoundReport_rows">
                     </tbody>
                 </table>
-            </div>
-            
-    <!-- Blocks Found -->              
-        <br /><br />
-        <h6 class="slim-pagetitle">BLOCKS FOUND</h6>
-        <br />
-        <div id="workerBlocksFound" class="table-responsive">
-            <table class="table table-hover table-striped">
-                <thead>
-                <tr>
-                    <th class="col1"><span >Height</span></th>
-                    <th class="col3"><span >Difficulty</span></th>                    
-                    <th class="col2"><span >Block Hash</span></th>
-                </tr>
-                </thead>
-                <tbody id="blocksFoundReport_rows">
-                </tbody>
-            </table>
-        </div>        
-<!-- Blocks Sahre -->              
-<br /><br />
-<h6 class="slim-pagetitle">RECENT BLOCKS</h6>
-<br />
-<div id="workerBlocksFound" class="table-responsive">
-    <table class="table table-hover table-striped">
-        <thead>
-        <tr>
-            <th class="col1"><span >Height</span></th>
-            <th class="col3"><span >Reward</span></th>      
-            <th class="col3"><span >Percentage</span></th>                                  
-            <th class="col2"><span >Payment</span></th>
-        </tr>
-        </thead>
-        <tbody id="blocksShareReport_rows">
-        </tbody>
-    </table>
-</div>        
-        <!-- Payments -->
-        <br /><br />
-        <h6 class="slim-pagetitle">PAYMENT HISTORY</h6>
-        <br />
-        <div id="workerPayments" class="table-responsive">
-            <table class="table table-hover table-striped">
-                <thead>
-                <tr>
-                    <th class="col1"><span tkey="timeSent">Time Sent</span></th>
-                    <th class="col3"><span tkey="amount">Amount</span></th>                    
-                    <th class="col2"><span tkey="transactionHash">Transaction Hash</span></th>
-                </tr>
-                </thead>
-                <tbody id="paymentsReport_rows">
+            </div>        
 
-                </tbody>
-            </table>
-        </div>        
+            <!-- Blocks Shares -->              
+            <br /><br />
+            <h6 class="slim-pagetitle">RECENT BLOCKS</h6>
+            <br />
+            <div id="workerBlocksFound" class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col1"><span >Height</span></th>
+                        <th class="col3"><span >Reward</span></th>      
+                        <th class="col3"><span >Percentage</span></th>                                  
+                        <th class="col2"><span >Payment</span></th>
+                    </tr>
+                    </thead>
+                    <tbody id="blocksShareReport_rows">
+                    </tbody>
+                </table>
+            </div>        
+
+            <!-- Payments -->
+            <br /><br />
+            <h6 class="slim-pagetitle">PAYMENT HISTORY</h6>
+            <br />
+            <div id="workerPayments" class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col1"><span tkey="timeSent">Time Sent</span></th>
+                        <th class="col3"><span tkey="amount">Amount</span></th>                    
+                        <th class="col2"><span tkey="transactionHash">Transaction Hash</span></th>
+                    </tr>
+                    </thead>
+                    <tbody id="paymentsReport_rows">
+
+                    </tbody>
+                </table>
+            </div>        
         
-        <p class="yourStats text-center push-up-10">
-            <button type="button" class="btn btn-primary-outline mg-t-20" id="loadMorePayments"><span tkey="loadMore">Load More</span></button>
-        </p>
-    </div>
-</div>
-    </div>
-</div>
+            <p class="yourStats text-center push-up-10">
+                <button type="button" class="btn btn-primary-outline mg-t-20" id="loadMorePayments"><span tkey="loadMore">Load More</span></button>
+            </p>
+            </div>
+        </div>
+    </div><!-- Worker Stats -->
+</div><!-- Container -->
 
 <!-- Javascript -->
 <script>
