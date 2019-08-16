@@ -69,6 +69,47 @@
     </div>
     <!-- d-flex ht-100v -->
 
+    <div class="yourStats row">
+        <div class="col-md-6 col-lg-6">
+            <ul class="list-group">
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium" tkey="networkHashrate">Network Hashrate</strong> <span id="networkHashrate" class="text-muted"></span></p>
+                </li>
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium">Average hashrate</strong> 1h: <span id="yourHR1h" class="text-muted"></span> | 6h: <span id="yourHR6h" class="text-muted"></span> | 24h: <span id="yourHR24h" class="text-muted"></span></p>
+                </li>
+                <li class="list-group-item">
+                        <p class="mg-b-0">Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
+                    </li>            
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium">Last Share</strong> <span id="yourLastShare" class="text-muted"></span></p>
+                </li>
+                <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Total shares</strong> <span id="yourHashes" class="text-muted"></span></p>
+                </li>
+            </ul>
+        </div><!-- Hashrate Stats -->
+
+        <div class="col-md-6 col-lg-6 mg-t-20 mg-md-t-0-force">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Pending Balance</strong> <span id="yourPendingBalance" class="text-muted"></span> | <strong class="tx-medium">Estimated Payout</strong> <span id="yourPayoutEstimate" class="text-muted"></span></span></p>
+                </li>              
+                <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Total Paid</strong> <span id="paidTotal" class="text-muted"></span></p>
+                </li>
+                <li class="list-group-item">
+                    <p class="mg-b-0"></i><strong class="tx-medium">Paid (24-Hours)</strong> <span id="paid24h" class="text-muted"></span></p>
+                </li>
+                <li class="list-group-item">
+                    <p class="mg-b-0"><strong class="tx-medium">Paid (7-Days)</strong> <span id="paid7d" class="text-muted"></span></p>
+                </li>        
+            </ul>
+        </div><!-- Payout Stats -->
+    </div><!-- Stats Row -->   
+
+
+
     <div class="card card-dash-one mg-t-20">
       <div class="row no-gutters">
         <div class="col-lg-3">
