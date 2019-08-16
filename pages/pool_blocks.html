@@ -177,6 +177,7 @@ function generateChart(data) {
             scales: {
                 yAxes: [{
                     ticks: {
+                        display: false,                        
                         beginAtZero: true,
                         userCallback: function(label, index, labels) {
                             if (Math.floor(label) === label) return label;
