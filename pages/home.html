@@ -58,8 +58,8 @@
                 </div><!-- media -->
                 <div class="media">
                   <div class="media-body">
-                    <a href="">Charlene Plateros</a>
-                    <p >Sales Representative</p>
+                    <a href="">Login</a>
+                    <p >Login: Address or Address+PaymentID </p>
                   </div><!-- media-body -->
                 </div><!-- media -->
                 <div class="media">
@@ -374,13 +374,13 @@
 			}
 
       marketPriceChart = new Chart(document.getElementById('chartMarketPriceCanvas'), {
-        type: 'line',
+        type: 'bar',
         data: {
           labels: timeLabels,
           datasets: [
             {
               data: data.market_data.sparkline_7d.price,
-              backgroundColor: 'rgba(255,165,0,0.2)',
+              backgroundColor: 'rgba(255,165,0,0.8)',
               fill: true,
               borderWidth: 0,
               pointRadius: 1,
