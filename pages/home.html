@@ -69,6 +69,8 @@
     </div>
     <!-- d-flex ht-100v -->
 
+    
+
     <div class="yourStats row">
         <div class="col-md-6 col-lg-6">
             <ul class="list-group">
@@ -76,16 +78,19 @@
                 <p class="mg-b-0"><strong class="tx-medium" tkey="networkHashrate">Network Hashrate</strong> <span id="networkHashrate" class="text-muted"></span></p>
                 </li>
                 <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium">Average hashrate</strong> 1h: <span id="yourHR1h" class="text-muted"></span> | 6h: <span id="yourHR6h" class="text-muted"></span> | 24h: <span id="yourHR24h" class="text-muted"></span></p>
+                <p class="mg-b-0"><strong class="tx-medium"tkey="networkDifficulty">Difficulty</strong> 1h: <span id="networkDifficulty" class="text-muted"></span></p>
+                </li>                    
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium"tkey="blockchainHeight">Blockchain Height</strong> 1h: <span id="blockchainHeight" class="text-muted"></span></p>
+                </li>                 
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium"tkey="blockSolvedTime">Block Found</strong> 1h: <span id="blockSolvedTime" class="text-muted"></span></p>
+                </li>       
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium" tkey="networkLastReward">Last Reward</strong> <span id="networkLastReward" class="text-muted"></span></p>
                 </li>
                 <li class="list-group-item">
-                        <p class="mg-b-0">Valid Shares: <span id="totalValidShares" style="color: green;"></span> | Invalid Shares: <span id="totalInvalidShares" style="color: red;"></span></p>
-                    </li>            
-                <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium">Last Share</strong> <span id="yourLastShare" class="text-muted"></span></p>
-                </li>
-                <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Total shares</strong> <span id="yourHashes" class="text-muted"></span></p>
+                <p class="mg-b-0"><strong class="tx-medium" tkey="currentEffort">Current Effort</strong> <span id="currentEffort" class="text-muted"></span></p>
                 </li>
             </ul>
         </div><!-- Hashrate Stats -->
@@ -107,78 +112,6 @@
             </ul>
         </div><!-- Payout Stats -->
     </div><!-- Stats Row -->   
-
-
-
-    <div class="card card-dash-one mg-t-20">
-      <div class="row no-gutters">
-        <div class="col-lg-3">
-          <div class="dash-content">
-            <label class="tx-primary" tkey="networkHashrate">NETWORK HASHRATE</label>
-            <h6>
-              <span id="networkHashrate">N/A</span></h6>
-          </div>
-          <!-- dash-content -->
-        </div>
-        <!-- col-3 -->
-        <div class="col-lg-3">
-          <div class="dash-content dash-small-info">
-            <div class="icon icon-info">
-              <span class="fa fa-sm fa-dollar"></span>
-            </div>
-            <label class="tx-primary" tkey="blockSolvedTime">BLOCK FOUND EVERY</label>
-            <h6>
-              <span id="blockSolvedTime">N/A</span>
-              <span class="smallText"></span></h6>
-          </div>
-          <!-- dash-content -->
-        </div>
-        <!-- col-3 -->
-        <div class="col-lg-3">
-          <div class="dash-content dash-small-info">
-            <div class="icon icon-info">
-              <span class="fa fa-sm fa-dollar"></span>
-            </div>
-            <label class="tx-primary" tkey="networkLastReward">LAST REWARD</label>
-            <h6>
-              <span id="networkLastReward">N/A</span></h6>
-          </div>
-          <!-- dash-content -->
-        </div>
-        <!-- col-3 -->
-        <div class="col-lg-3">
-          <div class="dash-content dash-small-info">
-            <div class="icon icon-info">
-              <span class="fa fa-sm fa-line-chart"></span>
-            </div>
-            <label class="tx-primary" tkey="currentEffort">CURRENT EFFORT</label>
-            <h6>
-              <span id="currentEffort">N/A</span></h6>
-          </div>
-          <!-- dash-content -->
-        </div>
-        <!-- col-3 -->
-      </div>
-      <!-- row -->
-    </div>
-    <!-- card -->
-
-    <div class="card card-dash-one mg-t-20">
-      <div class="row no-gutters">
-
-        <div class="col-lg-3">
-          <div class="dash-content">
-            <label class="tx-primary" tkey="blockchainHeight">BLOCKCHAIN HEIGHT</label>
-            <h6>
-              <span id="blockchainHeight">N/A</span></h6>
-          </div>
-          <!-- dash-content -->
-        </div>
-        <!-- col-3 -->
-      </div>
-      <!-- row -->
-    </div>
-    <!-- card -->
 
     <div class="slim-pageheader">
       <ol class="breadcrumb slim-breadcrumb">
