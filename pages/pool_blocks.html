@@ -182,6 +182,16 @@ function generateChart(data) {
                         }
                     }
                 }],
+                xAxes: [{
+                            display: false,
+                            ticks: {
+                                beginAtZero:true,
+                                fontSize: 11
+                            },
+                            gridLines: {
+                                color: 'rgba(255,255,255,.08)'
+                            }
+                        }]                
             },
             layout: {
                 padding: { top: 0, left: 0, right: 0, bottom: 0 }
