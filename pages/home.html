@@ -69,7 +69,7 @@
     </div>
     <!-- d-flex ht-100v -->
 
-    
+    <br />
 
     <div class="yourStats row">
         <div class="col-md-6 col-lg-6">
@@ -78,14 +78,17 @@
                 <p class="mg-b-0"><strong class="tx-medium" tkey="networkHashrate">Network Hashrate</strong> <span id="networkHashrate" class="text-muted"></span></p>
                 </li>
                 <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium"tkey="networkDifficulty">Difficulty</strong> 1h: <span id="networkDifficulty" class="text-muted"></span></p>
+                <p class="mg-b-0"><strong class="tx-medium"tkey="networkDifficulty">Difficulty</strong> <span id="networkDifficulty" class="text-muted"></span></p>
                 </li>                    
                 <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium"tkey="blockchainHeight">Blockchain Height</strong> 1h: <span id="blockchainHeight" class="text-muted"></span></p>
+                <p class="mg-b-0"><strong class="tx-medium"tkey="blockchainHeight">Blockchain Height</strong> <span id="blockchainHeight" class="text-muted"></span></p>
                 </li>                 
                 <li class="list-group-item">
-                <p class="mg-b-0"><strong class="tx-medium"tkey="blockSolvedTime">Block Found</strong> 1h: <span id="blockSolvedTime" class="text-muted"></span></p>
+                <p class="mg-b-0"><strong class="tx-medium"tkey="blockSolvedTime">Block Found</strong> <span id="blockSolvedTime" class="text-muted"></span></p>
                 </li>       
+                <li class="list-group-item">
+                <p class="mg-b-0"><strong class="tx-medium" tkey="networkLastBlockFound">Last Block Found</strong> <span id="networkLastBlockFound" class="text-muted"></span></p>
+                </li>
                 <li class="list-group-item">
                 <p class="mg-b-0"><strong class="tx-medium" tkey="networkLastReward">Last Reward</strong> <span id="networkLastReward" class="text-muted"></span></p>
                 </li>
@@ -95,20 +98,24 @@
             </ul>
         </div><!-- Hashrate Stats -->
 
+        
+
         <div class="col-md-6 col-lg-6 mg-t-20 mg-md-t-0-force">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Pending Balance</strong> <span id="yourPendingBalance" class="text-muted"></span> | <strong class="tx-medium">Estimated Payout</strong> <span id="yourPayoutEstimate" class="text-muted"></span></span></p>
-                </li>              
+                <p class="mg-b-0"><strong class="tx-medium"tkey="poolHashrate">Pool Hashrate</strong> <span id="poolHashrate" class="text-muted"></span></p>
+                </li>       
                 <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Total Paid</strong> <span id="paidTotal" class="text-muted"></span></p>
-                </li>
+                <p class="mg-b-0"><strong class="tx-medium"tkey="blocksTotal">Blocks Found</strong> <span id="blocksTotal" class="text-muted"></span></p>
+                </li>                                         
                 <li class="list-group-item">
-                    <p class="mg-b-0"></i><strong class="tx-medium">Paid (24-Hours)</strong> <span id="paid24h" class="text-muted"></span></p>
-                </li>
+                <p class="mg-b-0"><strong class="tx-medium"tkey="poolMiners">Pool Miners</strong> <span id="poolMiners" class="text-muted"></span></p>
+                </li>                    
                 <li class="list-group-item">
-                    <p class="mg-b-0"><strong class="tx-medium">Paid (7-Days)</strong> <span id="paid7d" class="text-muted"></span></p>
-                </li>        
+                <p class="mg-b-0"><strong class="tx-medium"tkey="poolWorkers">Pool Workers</strong> <span id="poolWorkers" class="text-muted"></span></p>
+                </li>                 
+
+
             </ul>
         </div><!-- Payout Stats -->
     </div><!-- Stats Row -->   
