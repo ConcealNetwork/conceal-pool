@@ -175,10 +175,10 @@
     // Update global informations
     function updateIndex(){
         updateText('coinSymbol', lastStats.config.symbol);
-        updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
-        updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');    
+        updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/s');
+        updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/s');    
         if (lastStats.miner && lastStats.miner.hashrate){
-            updateText('g_userHashrate', getReadableHashRateString(lastStats.miner.hashrate) + '/sec');
+            updateText('g_userHashrate', getReadableHashRateString(lastStats.miner.hashrate) + '/s');
         }
         else{
             updateText('g_userHashrate', 'N/A');

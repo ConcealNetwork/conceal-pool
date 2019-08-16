@@ -217,7 +217,7 @@ currentPage = {
         }
     },
     update: function(){
-        updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
+        updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/s');
         updateText('networkDifficulty', formatNumber(lastStats.network.difficulty.toString(), ' '));
         updateText('blockchainHeight', formatNumber(lastStats.network.height.toString(), ' '));
         updateText('currentEffort', (lastStats.pool.roundHashes / lastStats.network.difficulty * 100).toFixed(1) + '%');
@@ -265,7 +265,7 @@ function fetchAddressStats(longpoll){
                 updateText('yourLastShare', 'Never');
             }
 
-            updateText('yourHashrateHolder', (getReadableHashRateString(data.stats.hashrate) || '0 H') + '/sec');
+            updateText('yourHashrateHolder', (getReadableHashRateString(data.stats.hashrate) || '0 H') + '/s');
             if ('hashrate_1h' in data.stats) {
                 $('#minerAvgHR').show();
                 updateText('yourHR5m', (getReadableHashRateString(data.stats.hashrate_5m) || '0 H') + '/s');
