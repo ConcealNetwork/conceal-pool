@@ -42,7 +42,7 @@
         
     <!-- Chart -->
     <div id="blocksChart" class="card padding-15 padding-t-5 padding-b-5 mg-b-20">
-        <div class="chart" style="height:200px;">
+        <div class="chart" style="padding: 20px; height:200px;">
             <canvas id="blocksChartObj"></canvas>
             <a class="chart-style"></a>
         </div>
@@ -164,7 +164,9 @@ function generateChart(data) {
                     fill: false,
                     backgroundColor: bgcolor,
                     borderColor: bordercolor,
-                    borderWidth: borderwidth
+                    borderWidth: borderwidth,
+                    borderWidth: 0,
+                    borderColor: '#FFA500'                    
                 }
             ]
         },
