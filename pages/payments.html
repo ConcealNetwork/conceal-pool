@@ -1,71 +1,66 @@
 <div class="container">
     <div class="slim-pageheader">
         <ol class="breadcrumb slim-breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><span tkey="payments">Payments</span></li>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><span tkey="payments">Payments</span></li>
         </ol>
         <h6 class="slim-pagetitle"><span tkey="payments">Payments</span></h6>
     </div><!-- slim-pageheader -->
-
     <!-- Statistics -->
     <div id="blockStats" class="card card-dash-one mg-b-20">
         <div class="row no-gutters">
             <div class="col-lg-3">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-money"></span>
-                </div>
-                <label class="tx-primary" tkey="paymentsTotal">Total Payments</label>
-                <h2><span id="paymentsTotal">N/A</span> <span class="smallText">(<strong><span id="paymentsTotalPaid">N/A</span></strong> <span tkey="minersCount">miners</span>)</span></h2>
+                    <div class="icon icon-info">
+                        <span class="fa fa-sm fa-money"></span>
+                    </div>
+                    <label class="tx-primary" tkey="paymentsTotal">Total Payments</label>
+                    <h4><span id="paymentsTotal">N/A</span> <span class="smallText">(<strong><span id="paymentsTotalPaid">N/A</span></strong></h4>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
             <div class="col-lg-3">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-dollar"></span>
-                </div>
-                <label class="tx-primary" tkey="paymentsMinimum">Minimum Payout</label>
-                <h2><span id="paymentsMinimum">N/A</span></h2>
+                    <div class="icon icon-info">
+                        <span class="fa fa-sm fa-dollar"></span>
+                    </div>
+                    <label class="tx-primary" tkey="paymentsMinimum">Minimum Payout</label>
+                    <h4><span id="paymentsMinimum">N/A</span></h4>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
             <div class="col-lg-3">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-clock-o"></span>
-                </div>
-                <label class="tx-primary" tkey="paymentsInterval">Payment Interval</label>
-                <h2><span id="paymentsInterval">N/A</span></h2>
+                    <div class="icon icon-info">
+                        <span class="fa fa-sm fa-clock-o"></span>
+                    </div>
+                    <label class="tx-primary" tkey="paymentsInterval">Payment Interval</label>
+                    <h4><span id="paymentsInterval">N/A</span></h4>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
             <div class="col-lg-3">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-hashtag"></span>
-                </div>
-                <label class="tx-primary" tkey="paymentsDenomination">Denomination Unit</label>
-                <h2><span id="paymentsDenomination">N/A</span></h2>
+                    <div class="icon icon-info">
+                        <span class="fa fa-sm fa-hashtag"></span>
+                    </div>
+                    <label class="tx-primary" tkey="paymentsDenomination">Denomination Unit</label>
+                    <h4><span id="paymentsDenomination">N/A</span></h4>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
         </div><!-- row -->
-    </div>        
+    </div>
 
     <!-- Report -->
     <div class="card push-up-10">
         <div id="paymentsReport" class="table-responsive">
             <table class="table table-hover table-striped">
                 <thead>
-                <tr>
-                    <th class="col1"><span tkey="timeSent">Time Sent</span></th>
-                    <th class="col2"><span tkey="transactionHash">Transaction Hash</span></th>
-                    <th class="col3"><span tkey="amount">Amount</span></th>
-                    <th class="col4"><span tkey="fee">Fee</span></th>
-                    <th class="col5"><span tkey="mixin">Mixin</span></th>
-                    <th class="col6"><span tkey="payees">Payees</span></th>
-                </tr>
+                    <tr>
+                        <th class="col1"><span tkey="timeSent">Time Sent</span></th>
+                        <th class="col2"><span tkey="transactionHash">Transaction Hash</span></th>
+                        <th class="col3"><span tkey="amount">Amount</span></th>
+                        <th class="col4"><span tkey="fee">Fee</span></th>
+                    </tr>
                 </thead>
-                <tbody id="paymentsReport_rows">
-        
-                </tbody>
+                <tbody id="paymentsReport_rows"></tbody>
             </table>
         </div>
     </div>
@@ -112,9 +107,7 @@ function getPaymentCells(payment){
     return '<td class="col1">' + formatDate(payment.time) + '</td>' +
            '<td class="col2">' + formatPaymentLink(payment.hash) + '</td>' +
            '<td class="col3">' + getReadableCoins(payment.amount) + '</td>' +
-           '<td class="col4">' + getReadableCoins(payment.fee) + '</td>' +
-           '<td class="col5">' + payment.mixin + '</td>' +
-           '<td class="col6">' + payment.recipients + '</td>';
+           '<td class="col4">' + getReadableCoins(payment.fee) + '</td>';
 }
 
 // Get payment row element
