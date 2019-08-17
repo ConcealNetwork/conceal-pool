@@ -248,7 +248,7 @@ function parseBlock(height, serializedBlock){
 // Get block row element
 function getBlockRowElement(block, jsonString){        
     function formatBlockLink(hash){
-        return '<a target="_blank" href="' + getBlockchainUrl(hash) + '">' + hash + '</a>';
+        return '<a target="_blank" href="' + getBlockchainUrl(hash) + '">' + hash.substring(0, 15) + '...</a>';
     }
 
     var blockStatusClasses = {
@@ -262,11 +262,11 @@ function getBlockRowElement(block, jsonString){
     row.setAttribute('data-height', block.height);
     row.setAttribute('id', 'blockRow' + block.height);
     row.setAttribute('title', block.status);
-    row.className = blockStatusClasses[block.status];
+    //row.className = blockStatusClasses[block.status];
                 
     var reward = "";    
     if(typeof block.reward == "undefined"){
-        reward = "Waiting...";
+        reward = "Waiting..";
     }
     else{
         reward = getReadableCoins(block.reward, null, true);
