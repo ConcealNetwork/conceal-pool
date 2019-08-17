@@ -40355,7 +40355,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 
 #blocksReport .luckBad,
 #blocksReport .orphaned {
-  color: #a60000; 
+  color: #999; 
 }
 
 #blocksReport .luckGood, 
@@ -40380,7 +40380,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 #blockStats .luckBad {
-  color: red;   
+  color: #999;   
 }
 
 #blockStats .luckMid {
