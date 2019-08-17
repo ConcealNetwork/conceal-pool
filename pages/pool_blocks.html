@@ -248,7 +248,7 @@ function parseBlock(height, serializedBlock){
 // Get block row element
 function getBlockRowElement(block, jsonString){        
     function formatBlockLink(hash){
-        return '<a target="_blank" href="' + getBlockchainUrl(hash) + '">' + hash.substring(0, 15) + '...</a>';
+        return '<a target="_blank" href="' + getBlockchainUrl(hash) + '">' + hash.substring(0, 20) + '...</a>';
     }
 
     var blockStatusClasses = {
