@@ -4,7 +4,7 @@
         <li class="breadcrumb-item"><a href="#">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page"><span tkey="poolBlocks">Pool Blocks</span></li>
         </ol>
-        <h6 class="slim-pagetitle"><span tkey="poolBlocks">Pool Blocks</span></h6>
+        <h5 class="slim-pagetitle"><span tkey="poolBlocks">Pool Blocks</span></h5>
     </div><!-- slim-pageheader -->
 
     <!-- Statistics -->
@@ -12,29 +12,22 @@
         <div class="row no-gutters">
             <div class="col-lg-4">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-cubes"></span>
-                </div>
                 <label class="tx-primary" tkey="blocksTotal">Total Blocks Mined</label>
-                <h2><span id="blocksTotal">N/A</span> <span class="smallText">(<span id="lastBlockFound">Never</span>)</span></h2>
+                <h5><span id="blocksTotal">N/A</span></h5>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
             <div class="col-lg-4">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-unlock-alt"></span>
-                </div>
+
                 <label class="tx-primary" tkey="blocksMaturityCount">Maturity Requirement</label>
-                <h2><span id="blocksMaturityCount">N/A</span></h2>
+                <h5><span id="blocksMaturityCount">N/A</span></h5>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
             <div class="col-lg-4">
                 <div class="dash-content dash-small-info">
-                <div class="icon icon-info">
-                    <span class="fa fa-sm fa-line-chart"></span>
-                </div>
+
                 <label class="tx-primary" tkey="averageLuck">Average Luck</label>
-                <h2><span id="averageLuck">N/A</span></h2>
+                <h5><span id="averageLuck">N/A</span></h5>
                 </div><!-- dash-content -->
             </div><!-- col-3 -->
         </div><!-- row -->
@@ -248,7 +241,7 @@ function parseBlock(height, serializedBlock){
 // Get block row element
 function getBlockRowElement(block, jsonString){        
     function formatBlockLink(hash){
-        return '<a target="_blank" href="' + getBlockchainUrl(hash) + '">' + hash + '</a>';
+        return '<a target="_blank" href="' + getBlockchainUrl(hash) + '">' + hash.substring(0, 20) + '...</a>';
     }
 
     var blockStatusClasses = {
@@ -262,11 +255,11 @@ function getBlockRowElement(block, jsonString){
     row.setAttribute('data-height', block.height);
     row.setAttribute('id', 'blockRow' + block.height);
     row.setAttribute('title', block.status);
-    row.className = blockStatusClasses[block.status];
+    //row.className = blockStatusClasses[block.status];
                 
     var reward = "";    
     if(typeof block.reward == "undefined"){
-        reward = "Waiting...";
+        reward = "Waiting..";
     }
     else{
         reward = getReadableCoins(block.reward, null, true);
