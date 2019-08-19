@@ -69,8 +69,26 @@
     <label class="section-title">Mining Softwatre</label>
     <p class="mg-b-20 mg-sm-b-40">Below is a list of mining software that supports Cryptonight Conceal.</p>
 
-    <h3=>XMRig</h3>
+    <h3>XMRig</h3>
     <span class="tx-12 tx-uppercase d-block mg-b-5">(forked version of the XMRig CPU Miner)</span>
+
+    <code>"pool_list": [<br />
+      {<br />
+          "pool_address": "<span class="exampleHost">54.37.65.65</span>:<span class="examplePort">3333</span>",<br />
+          "wallet_address": "<span class="exampleLogin">YOUR_WALLET_ADDRESS</span>",<br />
+          "rig_id": "<span class="examplePassword">YOUR_WORKER_NAME</span>",<br />
+          "pool_password": "x",<br />
+          "use_nicehash": false,<br />
+          "use_tls": false, /* Set to true if you are using an SSL port */<br />
+          "tls_fingerprint": "",<br />
+          "pool_weight": 1<br />
+      },<br />
+  ],<br />
+  "currency": "<span id="xmrstakAlgo">cryptonight_conceal</span>",</code><br />
+    <hr>
+
+    <h3>XMR-Stak</h3>
+    <span class="tx-12 tx-uppercase d-block mg-b-5">(CPU+GPU Miner)</span>
 
     <code>"pools": [<br />
       {<br />
@@ -82,9 +100,9 @@
           "variant": "conceal"<br />
       }<br />
   ],<br /></code>
-    
-    <hr>
- 
+    <hr>    
+
+
   </div>
 
 </div>
