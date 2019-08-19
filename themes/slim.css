@@ -6698,6 +6698,10 @@ a.text-dark:hover, a.text-dark:focus {
     .show > .btn-outline-indigo.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(102, 16, 242, 0.5); }
 
+.earning-label {
+  font-size: 14px;
+}
+
 .btn-outline-purple {
   color: #6f42c1;
   background-color: transparent;
