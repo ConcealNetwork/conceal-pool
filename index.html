@@ -1,240 +1,250 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 
-    <title>Conceal Mining Pool</title>
+  <title>Conceal Mining Pool</title>
 
-    <!-- vendor css -->
-    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/Ionicons/css/ionicons.css" rel="stylesheet">
-    <link href="lib/chartist/css/chartist.css" rel="stylesheet">
-    <link href="lib/chartist/css/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="lib/jquery-toggles/css/toggles-full.css" rel="stylesheet">
-    <link href="lib/select2/css/select2.min.css" rel="stylesheet">
+  <!-- vendor css -->
+  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/Ionicons/css/ionicons.css" rel="stylesheet">
+  <link href="lib/chartist/css/chartist.css" rel="stylesheet">
+  <link href="lib/chartist/css/chartist-plugin-tooltip.css" rel="stylesheet">
+  <link href="lib/jquery-toggles/css/toggles-full.css" rel="stylesheet">
+  <link href="lib/select2/css/select2.min.css" rel="stylesheet">
 
-    <!-- Slim CSS -->
-    <link rel="stylesheet" href="themes/slim.css">
-    <link rel="stylesheet" href="themes/slim.one.css">
+  <!-- Slim CSS -->
+  <link rel="stylesheet" href="themes/slim.css">
+  <link rel="stylesheet" href="themes/slim.one.css">
 
-    <!-- script files -->
-    <script src="lib/jquery/js/jquery.js"></script>
-    <script src="lib/popper.js/js/popper.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
-    <script src="lib/jquery.cookie/js/jquery.cookie.js"></script>
-    <script src="lib/jquery.timeago/js/jquery.timeago.js"></script>
-    <script src="lib/select2/js/select2.full.min.js"></script>
-    <script src="lib/moment/js/moment.js"></script>
-    <script src="lib/chart.js/js/Chart.js"></script>
-    <script src="lib/chartist/js/chartist.js"></script>
-    <script src="lib/chartist/js/chartist-plugin-tooltip.min.js"></script>
-    <script src="lib/jquery.sparkline.bower/js/jquery.sparkline.min.js"></script>
-    <script src="lib/jquery-toggles/js/toggles.min.js"></script>
+  <!-- script files -->
+  <script src="lib/jquery/js/jquery.js"></script>
+  <script src="lib/popper.js/js/popper.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.js"></script>
+  <script src="lib/jquery.cookie/js/jquery.cookie.js"></script>
+  <script src="lib/jquery.timeago/js/jquery.timeago.js"></script>
+  <script src="lib/select2/js/select2.full.min.js"></script>
+  <script src="lib/moment/js/moment.js"></script>
+  <script src="lib/chart.js/js/Chart.js"></script>
+  <script src="lib/chartist/js/chartist.js"></script>
+  <script src="lib/chartist/js/chartist-plugin-tooltip.min.js"></script>
+  <script src="lib/jquery.sparkline.bower/js/jquery.sparkline.min.js"></script>
+  <script src="lib/jquery-toggles/js/toggles.min.js"></script>
 
-    <script src="js/ResizeSensor.js"></script>
-    <script src="js/slim.js"></script>
+  <script src="js/ResizeSensor.js"></script>
+  <script src="js/slim.js"></script>
 </head>
-<body>    
-    <div class="slim-header">
-        <div class="container">
-          <div class="slim-header-left">
-            <img src="img/logo.svg" width="48" height="58"> 
-            <div class="logoText">
-                <h2 class="slim-logo"><a href="index.html"><span>POOL</span></a></h2>
-            </div>
-          </div><!-- slim-header-left -->
-          <div class="slim-header-right">
-             <div id="section"><span id="statsUpdated"><span tkey="statsUpdated">Stats Updated</span> &nbsp;<i class="fa fa-bolt"></i></span></div>                
-             <div id="langSelector">
-                 <select id="newLang" class="form-control">
-                     <option value="en" selected="selected">English</option>
-                     <option value="es">Español</option>
-                     <option value="fr">Français</option>
-                     <option value="it">Italiano</option>
-                     <option value="ru">Русский</option>
-                     <option value="ca">Català</option>
-                     <option value="ko">한국어</option>
-                 </select>
-             </div>        
-          </div><!-- header-right -->
-        </div><!-- container -->
-      </div><!-- slim-header -->
-  
-      <div class="slim-navbar">
-        <div class="container">
-          <ul class="nav">
-            <li class="nav-item active">
-              <a class="nav-link hot_link" data-page="home.html" href="#">
-                <i class="icon ion-ios-home-outline"></i>
-                <span tkey="dashboard">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link hot_link" data-page="worker_stats.html" href="#worker_stats">
-                <i class="icon ion-android-desktop"></i>
-                <span tkey="yourStats">Workers</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link hot_link" data-page="pool_blocks.html" href="#pool_blocks">
-                <i class="icon ion-android-apps"></i>
-                <span tkey="poolBlocks">Blocks</span>
-              </a>
-                 </li>
-            <li class="nav-item">
-              <a class="nav-link hot_link" data-page="payments.html" href="#payments">
-                <i class="icon ion-cash"></i>
-                <span tkey="payments">Payments</span>
-              </a>
-            </li>
 
-            <li class="nav-item with-sub">
-              <a class="nav-link" href="#" data-toggle="dropdown">
-                <i class="icon ion-ios-analytics-outline"></i>
-                <span tkey="resources">RESOURCES</span>
-              </a>
-              <div class="sub-item">
-                <ul>
-                    <li><a class="hot_link" data-page="getting_started.html" href="#getting_started"><i class="fa fa-rocket icon-dropdown"></i><span tkey="gettingStarted">Getting started</span></a></li>
-                    <li><a class="hot_link" data-page="market.html" href="#market"><i class="fa fa-bank icon-dropdown"></i><span tkey="market">Market / Calculator</span></a></li>
-                    <li><a class="hot_link" data-page="settings.html" href="#settings"><i class="fa fa-gears icon-dropdown"></i><span tkey="settings">Settings</span></a></li>
-                    <li><a class="hot_link" data-page="faq.html" href="#faq"><i class="fa fa-comments icon-dropdown"></i><span tkey="faq">FAQ</span></a></li>
-                    <li><a class="hot_link" href="https://discord.gg/YbpHVSd"><i class="fa fa-ticket icon-dropdown"></i><span tkey="discord">Discord</span></a></li>
-                    <li><a class="hot_link" href="top10miners.html"><i class="fa fa-ticket icon-dropdown"></i><span tkey="top10miners">TOP 10</span></a></li>                    
-                </ul>
-             </div><!-- dropdown-menu -->
-           </li>
-          </ul>
-        </div><!-- container -->
-      </div><!-- slim-navbar -->
-  
-      <div id="page-wrapper">
-            <div class="slim-mainpanel" id="page">
-                <p id="loading" class="text-center"><i class="fa fa-circle-o-notch fa-spin"></i></p>
-            </div><!-- slim-mainpanel -->          
-      </div>
-  
-      <div class="slim-footer" id="poolFooter">
-        <div class="container">
-          <p>Copyright 2019 &copy; All Rights Reserved. Conceal Network</p>
-        </div><!-- container -->
-      </div><!-- slim-footer -->
-  
-    <!-- Javascript -->
-    <script src="config.js"></script>
-    <script src="lang/languages.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/custom.js"></script>
-    <script>
+<body>
+  <div class="slim-header">
+    <div class="container">
+      <div class="slim-header-left">
+        <img src="img/logo.svg" width="48" height="58">
+        <div class="logoText">
+          <h2 class="slim-logo"><a href="index.html"><span>POOL</span></a></h2>
+        </div>
+      </div><!-- slim-header-left -->
+      <div class="slim-header-right">
+        <div id="section"><span id="statsUpdated"><span tkey="statsUpdated">Stats Updated</span> &nbsp;<i
+              class="fa fa-bolt"></i></span></div>
+        <div id="langSelector">
+          <select id="newLang" class="form-control">
+            <option value="en" selected="selected">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+            <option value="ru">Русский</option>
+            <option value="ca">Català</option>
+            <option value="ko">한국어</option>
+          </select>
+        </div>
+      </div><!-- header-right -->
+    </div><!-- container -->
+  </div><!-- slim-header -->
+
+  <div class="slim-navbar">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item active">
+          <a class="nav-link hot_link" data-page="home.html" href="#">
+            <i class="icon ion-ios-home-outline"></i>
+            <span tkey="dashboard">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hot_link" data-page="worker_stats.html" href="#worker_stats">
+            <i class="icon ion-android-desktop"></i>
+            <span tkey="yourStats">Workers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hot_link" data-page="pool_blocks.html" href="#pool_blocks">
+            <i class="icon ion-android-apps"></i>
+            <span tkey="poolBlocks">Blocks</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hot_link" data-page="payments.html" href="#payments">
+            <i class="icon ion-cash"></i>
+            <span tkey="payments">Payments</span>
+          </a>
+        </li>
+
+        <li class="nav-item with-sub">
+          <a class="nav-link" href="#" data-toggle="dropdown">
+            <i class="icon ion-ios-analytics-outline"></i>
+            <span tkey="resources">RESOURCES</span>
+          </a>
+          <div class="sub-item">
+            <ul>
+              <li><a class="hot_link" data-page="getting_started.html" href="#getting_started"><i
+                    class="fa fa-rocket icon-dropdown"></i><span tkey="gettingStarted">Getting started</span></a></li>
+              <li><a class="hot_link" data-page="market.html" href="#market"><i
+                    class="fa fa-bank icon-dropdown"></i><span tkey="market">Market / Calculator</span></a></li>
+              <li><a class="hot_link" data-page="settings.html" href="#settings"><i
+                    class="fa fa-gears icon-dropdown"></i><span tkey="settings">Settings</span></a></li>
+              <li><a class="hot_link" data-page="faq.html" href="#faq"><i class="fa fa-comments icon-dropdown"></i><span
+                    tkey="faq">FAQ</span></a></li>
+              <li><a class="hot_link" href="https://discord.gg/YbpHVSd"><i class="fa fa-ticket icon-dropdown"></i><span
+                    tkey="discord">Discord</span></a></li>
+              <li><a class="hot_link" href="top10miners.html"><i class="fa fa-ticket icon-dropdown"></i><span
+                    tkey="top10miners">TOP 10</span></a></li>
+            </ul>
+          </div><!-- dropdown-menu -->
+        </li>
+      </ul>
+    </div><!-- container -->
+  </div><!-- slim-navbar -->
+
+  <div id="page-wrapper">
+    <div class="slim-mainpanel" id="page">
+      <p id="loading" class="text-center"><i class="fa fa-circle-o-notch fa-spin"></i></p>
+    </div><!-- slim-mainpanel -->
+  </div>
+
+  <div class="slim-footer" id="poolFooter">
+    <div class="container">
+      <p>Copyright 2019 &copy; All Rights Reserved. Conceal Network</p>
+    </div><!-- container -->
+  </div><!-- slim-footer -->
+
+  <!-- Javascript -->
+  <script src="config.js"></script>
+  <script src="lang/languages.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
 
     // Store last pool statistics
     var lastStats;
 
     $('.select2').select2({
-        containerCssClass: 'select2-dark',
-        dropdownCssClass: 'select2-dark',
-        minimumResultsForSearch: Infinity
+      containerCssClass: 'select2-dark',
+      dropdownCssClass: 'select2-dark',
+      minimumResultsForSearch: Infinity
     });
 
     // Get current miner address
     function getCurrentAddress() {
-        var urlWalletAddress = location.search.split('wallet=')[1] || 0;
-        var address = urlWalletAddress || docCookies.getItem('mining_address');
-        return address;
+      var urlWalletAddress = location.search.split('wallet=')[1] || 0;
+      var address = urlWalletAddress || docCookies.getItem('mining_address');
+      return address;
     }
 
     // Pulse live update
-    function pulseLiveUpdate(){
-        var stats_update = document.getElementById('statsUpdated');
-        stats_update.style.transition = 'opacity 100ms ease-out';
-        stats_update.style.opacity = 1;
-        setTimeout(function(){
-            stats_update.style.transition = 'opacity 7000ms linear';
-            stats_update.style.opacity = 0;
-        }, 500);
+    function pulseLiveUpdate() {
+      var stats_update = document.getElementById('statsUpdated');
+      stats_update.style.transition = 'opacity 100ms ease-out';
+      stats_update.style.opacity = 1;
+      setTimeout(function () {
+        stats_update.style.transition = 'opacity 7000ms linear';
+        stats_update.style.opacity = 0;
+      }, 500);
     }
 
     // Update live informations
     function updateLiveStats(data) {
-        pulseLiveUpdate();   
-        lastStats = data;
-        if (lastStats && lastStats.pool && lastStats.pool.totalMinersPaid.toString() == '-1'){
-            lastStats.pool.totalMinersPaid = 0;
-        }
-        updateIndex();
-        if (currentPage) currentPage.update();
+      pulseLiveUpdate();
+      lastStats = data;
+      if (lastStats && lastStats.pool && lastStats.pool.totalMinersPaid.toString() == '-1') {
+        lastStats.pool.totalMinersPaid = 0;
+      }
+      updateIndex();
+      if (currentPage) currentPage.update();
     }
 
     // Update global informations
-    function updateIndex(){
-        updateText('coinSymbol', lastStats.config.symbol);
-        updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/s');
-        updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/s');    
-        if (lastStats.miner && lastStats.miner.hashrate){
-            updateText('g_userHashrate', getReadableHashRateString(lastStats.miner.hashrate) + '/s');
-        }
-        else{
-            updateText('g_userHashrate', 'N/A');
-        }    
-        updateText('poolVersion', lastStats.config.version);
+    function updateIndex() {
+      updateText('coinSymbol', lastStats.config.symbol);
+      updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/s');
+      updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/s');
+      if (lastStats.miner && lastStats.miner.hashrate) {
+        updateText('g_userHashrate', getReadableHashRateString(lastStats.miner.hashrate) + '/s');
+      }
+      else {
+        updateText('g_userHashrate', 'N/A');
+      }
+      updateText('poolVersion', lastStats.config.version);
     }
 
     // Load live statistics
     function loadLiveStats(reload) {
-        var apiURL = api + '/stats';
-        
-        var address = getCurrentAddress();
-        if (address) { apiURL = apiURL + '?address=' + encodeURIComponent(address); }
+      var apiURL = api + '/stats';
 
-        if (xhrLiveStats) xhrLiveStats.abort();
-        
-        $.get(apiURL, function(data){        
-            updateLiveStats(data);
-            if (!reload) routePage(fetchLiveStats);
-        });
+      var address = getCurrentAddress();
+      if (address) { apiURL = apiURL + '?address=' + encodeURIComponent(address); }
+
+      if (xhrLiveStats) xhrLiveStats.abort();
+
+      $.get(apiURL, function (data) {
+        updateLiveStats(data);
+        if (!reload) routePage(fetchLiveStats);
+      });
     }
 
     // Fetch live statistics
     var xhrLiveStats;
     function fetchLiveStats() {
-        var apiURL = api + '/live_stats';
+      var apiURL = api + '/live_stats';
 
-        var address = getCurrentAddress();
-        if (address) { apiURL = apiURL + '?address=' + encodeURIComponent(address); }
-        
-        xhrLiveStats = $.ajax({
-            url: apiURL,
-            dataType: 'json',
-            cache: 'false'
-        }).done(function(data){
-            updateLiveStats(data);
-        }).always(function(){
-            fetchLiveStats();
-        });
+      var address = getCurrentAddress();
+      if (address) { apiURL = apiURL + '?address=' + encodeURIComponent(address); }
+
+      xhrLiveStats = $.ajax({
+        url: apiURL,
+        dataType: 'json',
+        cache: 'false'
+      }).done(function (data) {
+        updateLiveStats(data);
+      }).always(function () {
+        fetchLiveStats();
+      });
     }
 
     // Initialize
-    $(function(){        
-        // Add support informations to menu    
-        if (typeof telegram !== 'undefined' && telegram) {
-            $('#menu-content').append('<li><a target="_new" href="'+telegram+'"><i class="fa fa-telegram"></i> <span tkey="telegram">Telegram group</span></a></li>');
-        }
-        if (typeof discord !== 'undefined' && discord) {
-            $('#menu-content').append('<li><a target="_new" href="'+discord+'"><i class="fa fa-ticket"></i> <span tkey="discord">Discord</span></a></li>');
-        }
-        if (typeof email !== 'undefined' && email) {
-            $('#menu-content').append('<li><a target="_new" href="mailto:'+email+'"><i class="fa fa-envelope"></i> <span tkey="contactUs">Contact Us</span></a></li>');
-        }
-        if (typeof langs !== 'undefined' && langs) {
-            $('#menu-content').append('<div id="mLangSelector"></div>');
+    $(function () {
+      // Add support informations to menu    
+      if (typeof telegram !== 'undefined' && telegram) {
+        $('#menu-content').append('<li><a target="_new" href="' + telegram + '"><i class="fa fa-telegram"></i> <span tkey="telegram">Telegram group</span></a></li>');
+      }
+      if (typeof discord !== 'undefined' && discord) {
+        $('#menu-content').append('<li><a target="_new" href="' + discord + '"><i class="fa fa-ticket"></i> <span tkey="discord">Discord</span></a></li>');
+      }
+      if (typeof email !== 'undefined' && email) {
+        $('#menu-content').append('<li><a target="_new" href="mailto:' + email + '"><i class="fa fa-envelope"></i> <span tkey="contactUs">Contact Us</span></a></li>');
+      }
+      if (typeof langs !== 'undefined' && langs) {
+        $('#menu-content').append('<div id="mLangSelector"></div>');
         renderLangSelector();
-        }
-        
-        // Load live statistics for the first time
-        loadLiveStats();
+      }
+
+      // Load live statistics for the first time
+      loadLiveStats();
     });
-    </script>
+  </script>
 </body>
+
 </html>

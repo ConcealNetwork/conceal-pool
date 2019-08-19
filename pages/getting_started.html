@@ -8,62 +8,63 @@
     <h6 class="slim-pagetitle"><span tkey="gettingStarted">Getting Started</span></h6>
   </div><!-- slim-pageheader -->
 
-
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card card-people-list pd-20">
-          <div class="slim-card-title">Get Started</div>
-          <div class="media-list">
-            <div class="media">
-              <div class="media-body">
-                  <strong>Servers</strong>
-                <p class="text-muted">us.pool.conceal.network:5555</p>
-                <p class="text-muted">eu.pool.conceal.network:5555</p>                    
-                <p class="text-muted">asia.pool.conceal.network:5555</p>                    
-              </div><!-- media-body -->
-            </div><!-- media -->
-            <div class="media">
-              <div class="media-body">
-                  <strong>Algorithm</strong>
-                <p class="text-muted">Cryptonight Conceal</p>
-              </div><!-- media-body -->
-            </div><!-- media -->
-            <div class="media">
-              <div class="media-body">
-                  <strong>Username</strong>
-                  <p class="text-muted">The username is your wallet address. Any pool earnings will then be sent to that address once your miner reaches the minimum payment threshold. You can see your miners progress in the workers page once you enter your address. You can also mine directly to an Exchange address, although we recommend mining to your own wallet, and then transfer to an Exchange.</p><br/>
-                <p><strong>Mining to a Wallet:</strong> Address</p>
-                <p><strong>Mining to an Exchange:</strong> Address+PaymentID</p>
-                <p><strong>Set Static Difficulty:</strong> Address.difficulty</p>
-              </div><!-- media-body -->
-            </div><!-- media -->
-          </div><!-- media-list -->
-        </div>
-      </div>
-
-      <!-- Mining ports -->
-      <div class="col-sm-6">
-            <div id="miningPorts" class="table-responsive">
-              <table class="table table-hover table-striped">
-                <thead>
-                  <tr>
-                    <th class="col1"><span tkey="port">Port</span></th>
-                    <th class="col2"><span tkey="portDiff">Starting Difficulty</span></th>
-                    <th class="col3"><span tkey="description">Description</span></th>
-                  </tr>
-                </thead>
-                <tbody id="miningPorts_rows">
-                  <tr>
-                    <td class="col1"><span class="miningPort"></span></td>
-                    <td class="col2"><span class="miningPortDiff"></span></td>
-                    <td class="col3"><span class="miningPortDesc"></span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card card-people-list pd-20">
+        <div class="slim-card-title">Get Started</div>
+        <div class="media-list">
+          <div class="media">
+            <div class="media-body">
+              <strong>Servers</strong>
+              <p class="text-muted">us.pool.conceal.network:5555</p>
+              <p class="text-muted">eu.pool.conceal.network:5555</p>
+              <p class="text-muted">asia.pool.conceal.network:5555</p>
+            </div><!-- media-body -->
+          </div><!-- media -->
+          <div class="media">
+            <div class="media-body">
+              <strong>Algorithm</strong>
+              <p class="text-muted">Cryptonight Conceal</p>
+            </div><!-- media-body -->
+          </div><!-- media -->
+          <div class="media">
+            <div class="media-body">
+              <strong>Username</strong>
+              <p class="text-muted">The username is your wallet address. Any pool earnings will then be sent to that
+                address once your miner reaches the minimum payment threshold. You can see your miners progress in the
+                workers page once you enter your address. You can also mine directly to an Exchange address, although we
+                recommend mining to your own wallet, and then transfer to an Exchange.</p><br />
+              <p><strong>Mining to a Wallet:</strong> Address</p>
+              <p><strong>Mining to an Exchange:</strong> Address+PaymentID</p>
+              <p><strong>Set Static Difficulty:</strong> Address.difficulty</p>
+            </div><!-- media-body -->
+          </div><!-- media -->
+        </div><!-- media-list -->
       </div>
     </div>
 
+    <!-- Mining ports -->
+    <div class="col-sm-6">
+      <div id="miningPorts" class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th class="col1"><span tkey="port">Port</span></th>
+              <th class="col2"><span tkey="portDiff">Starting Difficulty</span></th>
+              <th class="col3"><span tkey="description">Description</span></th>
+            </tr>
+          </thead>
+          <tbody id="miningPorts_rows">
+            <tr>
+              <td class="col1"><span class="miningPort"></span></td>
+              <td class="col2"><span class="miningPortDiff"></span></td>
+              <td class="col3"><span class="miningPortDesc"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
   <div class="section-wrapper mg-t-20">
     <label class="section-title">Mining Softwatre</label>
@@ -100,26 +101,22 @@
           "variant": "conceal"<br />
       }<br />
   ],<br /></code>
-    <hr>    
+    <hr>
 
     <h3><a href="https://www.srbminer.com/start.html">SRBMiner</a></h3>
     <span class="tx-12 tx-uppercase d-block mg-b-5">(AMD GPU Miner)</span>
     <p>Double click on 'guided-setup.bat', and the program will guide you thru the setup process.</p>
-    <hr>    
+    <hr>
 
     <h3><a href="https://github.com/Bendr0id/xmrigCC/releases">XMRigCC</a></h3>
-    <span class="tx-12 tx-uppercase d-block mg-b-5">(XMRigCC is a fork of XMRig which adds the ability to remote control your XMRig instances)</span>
+    <span class="tx-12 tx-uppercase d-block mg-b-5">(XMRigCC is a fork of XMRig which adds the ability to remote control
+      your XMRig instances)</span>
     <code>xmrigDaemon.exe -o us.pool.conceal.network:5555 -u YOUR_WALLET_ADDRESS -p YOUR_WORKER_NAME -a  cryptonight --variant conceal -k 
     </code>
-    <hr>    
-
+    <hr>
 
   </div>
-
 </div>
-
-
-
 
 <!-- Javascript -->
 <script>
@@ -166,78 +163,8 @@
       var cnAlgorithm = lastStats.config.cnAlgorithm || "cryptonight";
       var cnVariant = lastStats.config.cnVariant || 0;
 
-      //algorithm = '';
-      //xmrstakAlgo = '';
       algorithm = 'Cryptonight Conceal';
       xmrstakAlgo = 'cryptonight_conceal';
-
-      /*
-      if (cnAlgorithm == "cryptonight_light") {
-        if (cnVariant === 1) {
-          algorithm = 'Cryptonight Light (Aeon v7)';
-          xmrstakAlgo = 'cryptonight_lite_v7';
-        } else if (cnVariant === 2) {
-          algorithm = 'Cryptonight Light (IPBC)';
-          xmrstakAlgo = 'cryptonight_lite_v7_xor';
-        } else {
-          algorithm = 'Cryptonight Light (Original)';
-          xmrstakAlgo = 'cryptonight_lite';
-        }
-      }
-      else if (cnAlgorithm == "cryptonight_conceal") {
-        algorithm = 'Cryptonight Conceal';
-        xmrstakAlgo = 'cryptonight_conceal';
-      }
-      else if (cnAlgorithm == "cryptonight_heavy") {
-        if (cnVariant === 1) {
-          algorithm = 'Crytonight Heavy (Haven)';
-          xmrstakAlgo = 'haven';
-        } else {
-          algorithm = 'Cryptonight Heavy';
-          xmrstakAlgo = 'cryptonight_heavy';
-        }
-      }
-      else {
-        if (cnVariant === 1) {
-          algorithm = 'Cryptonight (Monero v7)';
-          xmrstakAlgo = 'cryptonight_v7';
-        } else if (cnVariant === 9) {
-          algorithm = 'Cryptonight (Stellite v7)';
-          xmrstakAlgo = 'cryptonight_v7_stellite';
-        } else if (cnVariant === 4) {
-          algorithm = 'Cryptonight Fast (Masari)';
-          xmrstakAlgo = 'cryptonight_masari';
-        } else if (cnVariant === 2) {
-          algorithm = 'Cryptonight (Monero v8)';
-          xmrstakAlgo = 'cryptonight_v8';
-        } else if (cnVariant === 8) {
-          algorithm = 'Cryptonight (Monero v8)';
-          xmrstakAlgo = 'cryptonight_v8';
-        } else {
-          algorithm = 'Cryptonight (Original)';
-          xmrstakAlgo = 'cryptonight';
-        }
-      }
-      */
-
-      /*
-      if (coin == 'aeon') xmrstakAlgo = 'aeon7';
-      if (coin == 'bbscoin') xmrstakAlgo = 'bbscoin';
-      if (coin == 'croat') xmrstakAlgo = 'croat';
-      if (coin == 'edollar') xmrstakAlgo = 'edollar';
-      if (coin == 'electroneum') xmrstakAlgo = 'electroneum';
-      if (coin == 'graft') xmrstakAlgo = 'graft';
-      if (coin == 'haven') xmrstakAlgo = 'haven';
-      if (coin == 'intense') xmrstakAlgo = 'intense';
-      if (coin == 'ipbc') xmrstakAlgo = 'ipbc';
-      if (coin == 'karbo') xmrstakAlgo = 'karbo';
-      if (coin == 'masari') xmrstakAlgo = 'masari';
-      if (coin == 'monero') xmrstakAlgo = 'monero7';
-      if (coin == 'stellite') xmrstakAlgo = 'stellite';
-      if (coin == 'sumokoin') xmrstakAlgo = 'sumokoin';
-      if (coin == 'turtlecoin') xmrstakAlgo = 'turtlecoin';
-      */
-
       updateText('cnAlgorithm', algorithm);
       updateText('xmrstakAlgo', xmrstakAlgo);
     }
