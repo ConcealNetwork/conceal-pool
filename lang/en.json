@@ -35,9 +35,9 @@
     "workerName": "Worker Name",
     "lastHash": "Last Hash",
     "hashRate": "Hash Rate",
-    "currentHashRate": "Current",
-    "lastShare": "Last Share",
-    "totalHashes": "Total Hashes",
+    "currentHashRate": "Current Hash Rate",
+    "lastShare": "Last Share Submitted",
+    "totalHashes": "Total Hashes Submitted",
     "top10miners": "Top 10",
 
     "blocksTotal": "Blocks Found",
