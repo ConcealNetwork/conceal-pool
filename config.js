@@ -1,6 +1,6 @@
 var api = "https://pool.conceal.network/api";
 
-var email = "support@poolhost.com";
+var email = "ccx@conceal.network";
 var telegram = "https://t.me/joinchat/H0xqnU-vzSObrkQlov38dQ";
 var discord = "https://discordapp.com/invite/YbpHVSd";
 
